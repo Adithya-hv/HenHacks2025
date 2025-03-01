@@ -1,24 +1,38 @@
-import logo from './logo.svg';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import HomePage from './components/HomePage';
+import MembersPage from './components/MembersPage';
+import ResourcesPage from './components/ResourcesPage';
+import TasksPage from './components/TasksPage'; // Import TasksPage
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="flex flex-col h-screen bg-[#fff2e1]">
+        <div className="bg-gray-800 text-white w-full p-4">
+          <nav className="mt-4">
+            <ul className="flex space-x-4">
+              <li><Link to="/" className="text-white">Home</Link></li>
+              <li><Link to="/members" className="text-white">Members</Link></li>
+              <li><Link to="/resources" className="text-white">Resources</Link></li>
+              <li><Link to="/tasks" className="text-white">Tasks</Link></li>
+            </ul>
+          </nav>
+        </div>
+
+        <div className="flex-1 p-6 content">
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/members" element={<MembersPage />} />
+            <Route path="/resources" element={<ResourcesPage />} />
+            <Route path="/tasks" element={<TasksPage />} />
+          </Routes>
+        </div>
+      </div>
+      <footer>
+        © 2025 Copyright Jacob Becker & Adithya Hanakere Virupaksha
+      </footer>
+    </Router>
   );
 }
 

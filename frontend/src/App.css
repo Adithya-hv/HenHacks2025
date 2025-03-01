@@ -1,38 +1,221 @@
-.App {
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@400;700&family=Lora:wght@400;700&family=Roboto:wght@400;700&display=swap');
+
+/* Color Variables */
+:root {
+  --primary-color: #791B1C;
+  --secondary-color: #3D66B2;
+  --background-color: #FFF2E1;
+  --accent-color: #EAD7BD;
+  --text-color: #564C46;
+  --highlight-color: #E1332D;
+}
+
+/* General Styles */
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Headers */
+h1,
+h2,
+h3 {
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  color: var(--primary-color);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h1 {
+  font-size: 2.5rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+h2 {
+  font-size: 2rem;
+}
+
+p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.2rem;
+  color: #666;
+}
+
+/* Buttons */
+button {
+  font-family: 'Lora', serif;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  border-radius: 500px;
+}
+
+button:hover {
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/* Navigation Bar */
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 8px 0;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li a {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 1rem;
+  display: inline-block;
+  padding: 8px 15px;
+  color: var(--primary-color);
+  text-decoration: none;
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+}
+
+nav ul li a:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+/* Page Styles */
+.home-page,
+.members-page,
+.resources-page {
+  text-align: center;
+  padding: 2rem;
+}
+
+.home-page h1,
+.home-page p,
+.members-page h1,
+.members-page p,
+.resources-page h1,
+.resources-page p {
+  color: var(--primary-color);
+}
+
+/* Footer */
+footer {
+  font-family: 'Lora', serif;
+  font-size: 14px;
+  text-align: center;
+  padding: 20px;
+  background-color: var(--accent-color);
+  color: var(--text-color);
+  margin-top: auto;
+}
+
+/* List Styles */
+ul {
+  display: flex;
+  gap: 15px;
+  padding: 0;
+  margin: 0;
+  justify-content: center;
+}
+
+li {
+  margin: 0;
+}
+
+/* Box Styles */
+.box {
+  background-color: #FFFFFF;
+  color: var(--primary-color);
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  border-radius: 25px;
+  padding: 10px 20px;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+  max-width: 200px;
+  min-width: 200px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  flex-shrink: 0;
+}
+
+table {
+  margin: auto;
+  border-width: 10px;
+  border-color: var(--primary-color);
+}
+
+table tr th {
+  padding: 7px 60px;
+}
+
+.up-arrow {
+  color: green;
+  font-weight: bold;
+}
+
+.down-arrow {
+  color: red;
+  font-weight: bold;
+}
+
+/* Task Board Styles */
+.tasks-page {
+  text-align: center;
+  padding: 20px;
+}
+
+.task-columns {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.task-column {
+  background-color: #f4f4f4;
+  padding: 15px;
+  border-radius: 5px;
+  width: 30%;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.task-column h2 {
+  margin-bottom: 10px;
+}
+
+.task-item {
+  background-color: #fff;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.task-item button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.task-item button:hover {
+  background-color: #45a049;
 }
