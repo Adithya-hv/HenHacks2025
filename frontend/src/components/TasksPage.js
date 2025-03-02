@@ -1,43 +1,87 @@
-import React, { useState } from 'react';
-import '../App.css';
+import React, { useState } from "react";
+import { DndProvider, useDrag, useDrop } from "react-dnd";
+import { HTML5Backend } from "react-dnd-html5-backend";
+import "../App.css";
 
-const TasksPage = () => {
-  const [tasks, setTasks] = useState({
-    'To Do': ['Task 1', 'Task 2', 'Task 3'],
-    'In Progress': ['Task 4'],
-    'Done': ['Task 5']
+const ItemType = "TASK";
+
+const Task = ({ task, column, moveTask }) => {
+  const [{ isDragging }, drag] = useDrag({
+    type: ItemType,
+    item: { task, column },
+    collect: (monitor) => ({
+      isDragging: monitor.isDragging(),
+    }),
   });
 
-  const moveTask = (task, from, to) => {
-    const updatedTasks = { ...tasks };
-    updatedTasks[from] = updatedTasks[from].filter(t => t !== task);
-    updatedTasks[to] = [...updatedTasks[to], task];
-    setTasks(updatedTasks);
-  };
+  return (
+    <div
+      ref={drag}
+      className="task-item"
+      style={{ opacity: isDragging ? 0.5 : 1 }}
+    >
+      {task}
+    </div>
+  );
+};
+
+const Column = ({ title, tasks, moveTask }) => {
+  const [, drop] = useDrop({
+    accept: ItemType,
+    drop: (item) => moveTask(item.task, item.column, title),
+  });
 
   return (
-    <div className="tasks-page">
-      <h1>Task Board</h1>
-      <div className="task-columns">
-        {Object.keys(tasks).map((column) => (
-          <div className="task-column" key={column}>
-            <h3>{column}</h3>
-            <ul>
-              {tasks[column].map((task, index) => (
-                <li key={index} className="task-item">
-                  <span>{task}</span>
-                  <div className="task-buttons">
-                    <button onClick={() => moveTask(task, column, 'To Do')}>To Do</button>
-                    <button onClick={() => moveTask(task, column, 'In Progress')}>In Progress</button>
-                    <button onClick={() => moveTask(task, column, 'Done')}>Done</button>
-                  </div>
-                </li>
-              ))}
-            </ul>
-          </div>
+    <div ref={drop} className="task-column">
+      <h3 className="task-column-title">{title}</h3>
+      <div className="task-list">
+        {tasks.map((task, index) => (
+          <Task key={index} task={task} column={title} moveTask={moveTask} />
         ))}
       </div>
     </div>
+  );
+};
+
+const TasksPage = () => {
+  const [tasks, setTasks] = useState({
+    "To Do": ["Task 1", "Task 2", "Task 3"],
+    "In Progress": ["Task 4"],
+    Done: ["Task 5"],
+  });
+
+  const addTask = () => {
+    const newTask = prompt("Enter the new task:");
+    if (newTask) {
+      setTasks((prevTasks) => ({
+        ...prevTasks,
+        "To Do": [...prevTasks["To Do"], newTask],
+      }));
+    }
+  };
+
+  const moveTask = (task, from, to) => {
+    if (from === to) return; // Prevent unnecessary state updates
+    setTasks((prevTasks) => {
+      const updatedTasks = { ...prevTasks };
+      updatedTasks[from] = updatedTasks[from].filter((t) => t !== task);
+      updatedTasks[to] = [...updatedTasks[to], task];
+      return updatedTasks;
+    });
+  };
+
+  return (
+    <DndProvider backend={HTML5Backend}>
+      <div className="tasks-page">
+        <h1 className="task-title">Task Board</h1>
+        <button className="cool_button" onClick={addTask}>Add Task +</button>
+        <div className="task-columns">
+          {Object.keys(tasks).map((column) => (
+            <Column key={column} title={column} tasks={tasks[column]} moveTask={moveTask} />
+          ))}
+        </div>
+      </div>
+    </DndProvider>
   );
 };
 
