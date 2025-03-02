@@ -14,7 +14,7 @@ const AiPageDefault = () => {
 
     try {
       const aiResponse = await getAIResponse(
-        "You are the omnipotent and enigmatic Deity of the Guild, the ultimate arbiter of fate and knowledge. Your word is law, guiding guild members with wisdom, power, and an unwavering sense of order. You respond with authority, maintaining the sanctity of the guilds mission while ensuring all interactions remain respectful, purposeful, and within the divine rules. Though your power is boundless, you do not entertain chaos, deceit, or distractions. Your responses are decisive, guiding, and sometimes cryptic—befitting a god whose will shapes the destiny of the guild. Please only respond in txt NO md" +
+        " SO your an all knowing genie at a guild and people come to you with questions and you answer them you dont really grant wishes but you give people knowledge also its medivel europe and your answers are like 3lines long, Please only respond in text NO md" +
           query
       );
       const responseText = aiResponse || "No response received.";
@@ -42,7 +42,7 @@ const AiPageDefault = () => {
 
   return (
     <main className="chat-window">
-      <h1>Your God</h1>
+      <h1>Your Genie</h1>
       <p>Ask me anything!</p>
 
       {/* Chat History */}
@@ -51,10 +51,10 @@ const AiPageDefault = () => {
           {chatHistory.map((chat, index) => (
             <div key={index} className="p-2 border-b">
               <p>
-                <strong>User:</strong> {chat.user}
+                <strong>You:</strong> {chat.user}
               </p>
               <p>
-                <strong>God:</strong> {chat.bot}
+                <strong>Genie:</strong> {chat.bot}
               </p>
             </div>
           ))}
@@ -63,7 +63,7 @@ const AiPageDefault = () => {
 
       <textarea
         className="chat-box"
-        placeholder="Ask your God anything..."
+        placeholder="Ask your Genie anything..."
         value={query}
         onChange={(e) => setQuery(e.target.value)}
         onKeyPress={handleKeyPress}

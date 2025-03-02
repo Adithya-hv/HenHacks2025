@@ -45,9 +45,9 @@ const Column = ({ title, tasks, moveTask }) => {
 
 const TasksPage = () => {
   const [tasks, setTasks] = useState({
-    "To Do": ["Task 1", "Task 2", "Task 3"],
-    "In Progress": ["Task 4"],
-    Done: ["Task 5"],
+    "To Do": ["Walk the Cattle", "Escort the Queen", "Feed The Hens"],
+    "In Progress": ["Deliver Wheat"],
+    Done: ["Mine Iron"],
   });
 
   const addTask = () => {
@@ -74,10 +74,17 @@ const TasksPage = () => {
     <DndProvider backend={HTML5Backend}>
       <div className="tasks-page">
         <h1 className="task-title">Task Board</h1>
-        <button className="cool_button" onClick={addTask}>Add Task +</button>
+        <button className="cool_button" onClick={addTask}>
+          Add Task +
+        </button>
         <div className="task-columns">
           {Object.keys(tasks).map((column) => (
-            <Column key={column} title={column} tasks={tasks[column]} moveTask={moveTask} />
+            <Column
+              key={column}
+              title={column}
+              tasks={tasks[column]}
+              moveTask={moveTask}
+            />
           ))}
         </div>
       </div>

@@ -34,12 +34,10 @@ const HomePage = () => {
     const fetchMembers = async () => {
       try {
         const membersData = await getResources();
-        setMembers(
-          membersData.length ? membersData : ["No members available."]
-        );
+        setMembers(membersData.length ? membersData : ["Alice"]);
       } catch (error) {
         console.error("Error fetching members:", error);
-        setMembers(["No members available."]);
+        setMembers(["Alice"]);
       }
     };
 
