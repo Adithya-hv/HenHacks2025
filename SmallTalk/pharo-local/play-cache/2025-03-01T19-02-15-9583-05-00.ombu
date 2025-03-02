@@ -1,0 +1,541 @@
+OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-01T19:15:23.07991-05:00' ],
+		#self : OmReference [ '22' ]
+	},
+	#content : 'connection := SQLite3Connection on: (FileLocator default imageDirectory / \'guilds.db\') fullName.\r\rconnection open.\rconnection execute: \'CREATE TABLE IF NOT EXISTS person (id INTEGER PRIMARY KEY, name TEXT, age INTEGER);\'.\r\rconnection execute: \'BEGIN TRANSACTION;\'.\rconnection execute: \'INSERT INTO person (name, age) VALUES (?2, ?1);\' value: 25 value: \'Cyril\'.\rconnection execute: \'COMMIT;\'.\r\rcursor := connection execute: \'SELECT * FROM person;\'.\rcursor do: [:row |\r    | id name age |\r    id := row at: \'id\'.\r    name := row at: \'name\'.\r    age := row at: \'age\'.\r    Transcript show: \'ID: \', id printString; cr.\r    Transcript show: \'Name: \', name; cr.\r    Transcript show: \'Age: \', age printString; cr.\r].\r\rconnection close.\r'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-01T19:16:35.74094-05:00' ],
+		#self : OmReference [ '23' ]
+	},
+	#content : 'connection := SQLite3Connection on: (FileDirectory default / \'guilds.db\') fullName.\r\r\rconnection open.\rconnection execute: \'CREATE TABLE IF NOT EXISTS person (id INTEGER PRIMARY KEY, name TEXT, age INTEGER);\'.\r\rconnection execute: \'BEGIN TRANSACTION;\'.\rconnection execute: \'INSERT INTO person (name, age) VALUES (?2, ?1);\' value: 25 value: \'Cyril\'.\rconnection execute: \'COMMIT;\'.\r\rcursor := connection execute: \'SELECT * FROM person;\'.\rcursor do: [:row |\r    | id name age |\r    id := row at: \'id\'.\r    name := row at: \'name\'.\r    age := row at: \'age\'.\r    Transcript show: \'ID: \', id printString; cr.\r    Transcript show: \'Name: \', name; cr.\r    Transcript show: \'Age: \', age printString; cr.\r].\r\rconnection close.\r'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-01T19:17:32.23929-05:00' ],
+		#self : OmReference [ '24' ]
+	},
+	#content : '| connection dbFilePath |\rdbFilePath := FileLocator default imageDirectory / \'your_database.db\'.\rconnection := SQLite3Connection on: dbFilePath fullName.\r\r\rconnection open.\rconnection execute: \'CREATE TABLE IF NOT EXISTS person (id INTEGER PRIMARY KEY, name TEXT, age INTEGER);\'.\r\rconnection execute: \'BEGIN TRANSACTION;\'.\rconnection execute: \'INSERT INTO person (name, age) VALUES (?2, ?1);\' value: 25 value: \'Cyril\'.\rconnection execute: \'COMMIT;\'.\r\rcursor := connection execute: \'SELECT * FROM person;\'.\rcursor do: [:row |\r    | id name age |\r    id := row at: \'id\'.\r    name := row at: \'name\'.\r    age := row at: \'age\'.\r    Transcript show: \'ID: \', id printString; cr.\r    Transcript show: \'Name: \', name; cr.\r    Transcript show: \'Age: \', age printString; cr.\r].\r\rconnection close.\r'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-01T19:17:46.928935-05:00' ],
+		#self : OmReference [ '25' ]
+	},
+	#content : '| connection dbFilePath |\rdbFilePath := FileLocator default imageDirectory / \'guilds.db\'.\rconnection := SQLite3Connection on: dbFilePath fullName.\r\r\rconnection open.\rconnection execute: \'CREATE TABLE IF NOT EXISTS person (id INTEGER PRIMARY KEY, name TEXT, age INTEGER);\'.\r\rconnection execute: \'BEGIN TRANSACTION;\'.\rconnection execute: \'INSERT INTO person (name, age) VALUES (?2, ?1);\' value: 25 value: \'Cyril\'.\rconnection execute: \'COMMIT;\'.\r\rcursor := connection execute: \'SELECT * FROM person;\'.\rcursor do: [:row |\r    | id name age |\r    id := row at: \'id\'.\r    name := row at: \'name\'.\r    age := row at: \'age\'.\r    Transcript show: \'ID: \', id printString; cr.\r    Transcript show: \'Name: \', name; cr.\r    Transcript show: \'Age: \', age printString; cr.\r].\r\rconnection close.\r'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-01T19:18:29.827943-05:00' ],
+		#self : OmReference [ '26' ]
+	},
+	#content : 'connection := SQLite3Connection\r  on: (Smalltalk imageDirectory / \'guilds.db\') fullName.\r\r\rconnection open.\rconnection execute: \'CREATE TABLE IF NOT EXISTS person (id INTEGER PRIMARY KEY, name TEXT, age INTEGER);\'.\r\rconnection execute: \'BEGIN TRANSACTION;\'.\rconnection execute: \'INSERT INTO person (name, age) VALUES (?2, ?1);\' value: 25 value: \'Cyril\'.\rconnection execute: \'COMMIT;\'.\r\rcursor := connection execute: \'SELECT * FROM person;\'.\rcursor do: [:row |\r    | id name age |\r    id := row at: \'id\'.\r    name := row at: \'name\'.\r    age := row at: \'age\'.\r    Transcript show: \'ID: \', id printString; cr.\r    Transcript show: \'Name: \', name; cr.\r    Transcript show: \'Age: \', age printString; cr.\r].\r\rconnection close.\r'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-01T19:46:37.906364-05:00' ],
+		#self : OmReference [ '27' ]
+	},
+	#content : 'Metacello new\r  repository: \'github://svenvc/zinc/repository\';\r  baseline: \'ZincHTTPComponents\';\r  load.\r'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-01T19:49:23.960762-05:00' ],
+		#self : OmReference [ '28' ]
+	},
+	#content : 'Metacello new\r  repository: \'github://svenvc/NeoJSON/repository\';\r  baseline: \'NeoJSON\';\r  load.\r'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-01T19:53:15.44249-05:00' ],
+		#self : OmReference [ '29' ]
+	},
+	#content : 'M'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-01T19:58:19.514878-05:00' ],
+		#self : OmReference [ '30' ]
+	},
+	#content : '| connection dbFile |\rdbFile := (Smalltalk imageDirectory / \'guilds.db\') fullName.\rconnection := SQLite3Connection on: dbFile.\rconnection open.\r"Table for guild resources"\rconnection execute: \'CREATE TABLE IF NOT EXISTS resources (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    amount INTEGER,\r    changePerDay INTEGER\r  );\'.\r\r"Table for guild members"\rconnection execute: \'CREATE TABLE IF NOT EXISTS members (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    role TEXT,\r    tasks TEXT\r  );\'.'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-01T19:58:29.904314-05:00' ],
+		#self : OmReference [ '31' ]
+	},
+	#content : '| connection dbFile |\rdbFile := (Smalltalk imageDirectory / \'guilds.db\') fullName.\rconnection := SQLite3Connection on: dbFile.\rconnection open.\r"Table for guild resources"\rconnection execute: \'CREATE TABLE IF NOT EXISTS resources (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    amount INTEGER,\r    changePerDay INTEGER\r  );\'.\r\r"Table for guild members"\rconnection execute: \'CREATE TABLE IF NOT EXISTS members (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    role TEXT,\r    tasks TEXT\r  );\'.\rconnection close.\r'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-01T20:00:04.988094-05:00' ],
+		#self : OmReference [ '32' ]
+	},
+	#content : '| server |\rserver := ZnServer default.\rserver port: 1701.\rserver start.'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-01T20:00:28.895694-05:00' ],
+		#self : OmReference [ '33' ]
+	},
+	#content : '| server |\rZnServer startDefaultOn: 1701.\r'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-01T20:01:29.380081-05:00' ],
+		#self : OmReference [ '34' ]
+	},
+	#content : '| server |\rZnServer startDefaultOn: 1701.\r\r'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-01T20:01:47.061031-05:00' ],
+		#self : OmReference [ '35' ]
+	},
+	#content : '| server |\rZnServer startDefaultOn: 1701.\r\rZnClient new \r  url: ZnServer default localUrl; \r  addPathSegment: #echo; \r  entity: (ZnEntity text: \'Hello\'); \r  post.\r'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-01T20:09:58.905355-05:00' ],
+		#self : OmReference [ '36' ]
+	},
+	#content : '| server |\r(ZnServer defaultOn: 1701)\rlogToTranscript;\rstart.\r\rZnClient new \r  url: ZnServer default localUrl; \r  addPathSegment: #echo; \r  entity: (ZnEntity text: \'Hello\'); \r  post.\r'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-01T20:15:22.640101-05:00' ],
+		#self : OmReference [ '37' ]
+	},
+	#content : '| server |\r(ZnServer defaultOn: 1701)\rlogToTranscript;\rstart.\r\rZnClient new \r  url: ZnServer default localUrl; \r  addPathSegment: #echo; \r  entity: (ZnEntity text: \'Hello\'); \r  post.'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-01T20:16:07.397386-05:00' ],
+		#self : OmReference [ '38' ]
+	},
+	#content : '| server |\r(ZnServer defaultOn: 1701)\rlogToTranscript;\rstart.\r\rZnClient new \r  url: ZnServer default localUrl; \r  addPathSegment: #echo; \r  entity: (ZnEntity text: \'Hello\'); \r  post.\r\rObject subclass: #GuildAPI\r    instanceVariableNames: \'\'\r    classVariableNames: \'\'\r    poolDictionaries: \'\'\r    category: \'Guild-Backend\'.\r\rGuildAPI >> handleRequest: aRequest\r    | path method json response |\r    path := aRequest path.\r    method := aRequest method.\r    "Dispatch based on the request path and method"\r    method = \'GET\'\r        ifTrue: [ response := self handleGET: path ]\r        ifFalse: [ response := self handlePOST: path aRequest: aRequest ].\r    json := NeoJSONWriter toString: response.\r    ^ZnResponse ok\r        contentType: \'application/json\';\r        contents: json.'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-01T21:22:51.743388-05:00' ],
+		#self : OmReference [ '39' ]
+	},
+	#content : '| server |\r(ZnServer defaultOn: 1701)\rlogToTranscript;\rstart.\r\rZnClient new \r  url: ZnServer default localUrl; \r  addPathSegment: #echo; \r  entity: (ZnEntity text: \'Hello\'); \r  post.\r\rapi := GuildAPI new.\rdummyRequest := ZnRequest new.\rdummyRequest path: \'/resources\'.\rdummyRequest method: \'GET\'.\rresponse := api handleRequest: dummyRequest.\rTranscript show: response printString; cr.'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-01T21:23:43.156739-05:00' ],
+		#self : OmReference [ '40' ]
+	},
+	#content : '| server |\r(ZnServer defaultOn: 1701)\rlogToTranscript;\rstart.\r\rZnClient new \r  url: ZnServer default localUrl; \r  addPathSegment: #echo; \r  entity: (ZnEntity text: \'Hello\'); \r  post.\r\rapi := GuildAPI new.\rdummyRequest := ZnRequest new.\rdummyRequest url: \'http://localhost:1701/resources\'.  "Set the full URL instead of just the path"\rdummyRequest method: \'GET\'.\rresponse := api handleRequest: dummyRequest.\rTranscript show: response printString; cr.'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-01T21:24:39.812245-05:00' ],
+		#self : OmReference [ '41' ]
+	},
+	#content : '| server |\r(ZnServer defaultOn: 1701)\rlogToTranscript;\rstart.\r\rZnClient new \r  url: ZnServer default localUrl; \r  addPathSegment: #echo; \r  entity: (ZnEntity text: \'Hello\'); \r  post.\r\rapi := GuildAPI new.\rdummyRequest := ZnRequest new.\rdummyRequest url: (ZnUrl fromString: \'http://localhost:1701/resources\').  "Set the full URL instead of just the path"\rdummyRequest method: \'GET\'.\rresponse := api handleRequest: dummyRequest.\rTranscript show: response printString; cr.'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-01T21:24:58.249539-05:00' ],
+		#self : OmReference [ '42' ]
+	},
+	#content : '| server |\r(ZnServer defaultOn: 1701)\rlogToTranscript;\rstart.\r\rZnClient new \r  url: ZnServer default localUrl; \r  addPathSegment: #echo; \r  entity: (ZnEntity text: \'Hello\'); \r  post.\r\rapi := GuildAPI new.\rdummyRequest := ZnRequest new.\rdummyRequest url: (ZnUrl fromString:\'http://localhost:1701/resources\').  "Set the full URL instead of just the path"\rdummyRequest method: \'GET\'.\rresponse := api handleRequest: dummyRequest.\rTranscript show: response printString; cr.'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-01T21:25:07.801922-05:00' ],
+		#self : OmReference [ '43' ]
+	},
+	#content : '| server |\r(ZnServer defaultOn: 1701)\rlogToTranscript;\rstart.\r\rZnClient new \r  url: ZnServer default localUrl; \r  addPathSegment: #echo; \r  entity: (ZnEntity text: \'Hello\'); \r  post.\r\rapi := GuildAPI new.\rdummyRequest := ZnRequest new.\rdummyRequest url: (ZnUrl fromString: \'http://localhost:1701/resources\').  "Set the full URL instead of just the path"\rdummyRequest method: \'GET\'.\rresponse := api handleRequest: dummyRequest.\rTranscript show: response printString; cr.'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-01T21:25:49.755988-05:00' ],
+		#self : OmReference [ '44' ]
+	},
+	#content : '| server |\r(ZnServer defaultOn: 1701)\rlogToTranscript;\rstart.\r\rZnClient new \r  url: ZnServer default localUrl; \r  addPathSegment: #echo; \r  entity: (ZnEntity text: \'Hello\'); \r  post.\r\r| api dummyRequest response |\rapi := GuildAPI new.\rdummyRequest := ZnRequest newFromUrl: (ZnUrl fromString: \'http://localhost:1701/resources\').\rdummyRequest method: \'GET\'.\rresponse := api handleRequest: dummyRequest.\rTranscript show: response printString; cr.'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-01T21:26:08.657983-05:00' ],
+		#self : OmReference [ '45' ]
+	},
+	#content : '| server |\r(ZnServer defaultOn: 1701)\rlogToTranscript;\rstart.\r\rZnClient new \r  url: ZnServer default localUrl; \r  addPathSegment: #echo; \r  entity: (ZnEntity text: \'Hello\'); \r  post.\r\rapi := GuildAPI new.\rdummyRequest := ZnRequest newFromUrl: (ZnUrl fromString: \'http://localhost:1701/resources\').\rdummyRequest method: \'GET\'.\rresponse := api handleRequest: dummyRequest.\rTranscript show: response printString; cr.'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-01T21:27:02.361888-05:00' ],
+		#self : OmReference [ '46' ]
+	},
+	#content : '| server |\r(ZnServer defaultOn: 1701)\rlogToTranscript;\rstart.\r\rZnClient new \r  url: ZnServer default localUrl; \r  addPathSegment: #echo; \r  entity: (ZnEntity text: \'Hello\'); \r  post.\r\rapi := GuildAPI new.\rdummyRequest := ZnRequest for: (ZnUrl fromString: \'http://localhost:1701/resources\').\r\rdummyRequest method: \'GET\'.\rresponse := api handleRequest: dummyRequest.\rTranscript show: response printString; cr.'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-01T21:28:20.286813-05:00' ],
+		#self : OmReference [ '47' ]
+	},
+	#content : '| server |\r(ZnServer defaultOn: 1701)\rlogToTranscript;\rstart.\r\rZnClient new \r  url: ZnServer default localUrl; \r  addPathSegment: #echo; \r  entity: (ZnEntity text: \'Hello\'); \r  post.\r\rclient := ZnClient new.\rclient url: \'http://localhost:1701/resources\'.\rresponse := client get.\rTranscript show: response contents; cr.'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-01T21:46:18.261302-05:00' ],
+		#self : OmReference [ '48' ]
+	},
+	#content : '| server |\r(ZnServer defaultOn: 1701)\rlogToTranscript;\rstart.\r\rZnClient new \r  url: ZnServer default localUrl; \r  addPathSegment: #echo; \r  entity: (ZnEntity text: \'Hello\'); \r  post.\r\rclient := ZnClient new.\rclient url: \'http://localhost:1701/getResources\'.\rresponse := client get.\rTranscript show: response contents; cr.'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-01T21:49:00.681026-05:00' ],
+		#self : OmReference [ '49' ]
+	},
+	#content : '| server |\rZnServer defaultOn: 1701 start.\r\rZnClient new \r  url: ZnServer default localUrl; \r  addPathSegment: #echo; \r  entity: (ZnEntity text: \'Hello\'); \r  post.\r\rclient := ZnClient new.\rclient url: \'http://localhost:1701/getResources\'.\rresponse := client get.\rTranscript show: response contents; cr.'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-01T21:50:40.504552-05:00' ],
+		#self : OmReference [ '50' ]
+	},
+	#content : '| server |\rZnServer defaultOn: 1701.\r\rZnClient new \r  url: ZnServer default localUrl; \r  addPathSegment: #echo; \r  entity: (ZnEntity text: \'Hello\'); \r  post.\r\rclient := ZnClient new.\rclient url: \'http://localhost:1701/getResources\'.\rresponse := client get.\rTranscript show: response contents; cr.'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-01T21:51:24.331244-05:00' ],
+		#self : OmReference [ '51' ]
+	},
+	#content : '| server |\rZnServer defaultOn: 1701 start.\r\rZnClient new \r  url: ZnServer default localUrl; \r  addPathSegment: #echo; \r  entity: (ZnEntity text: \'Hello\'); \r  post.\r\rclient := ZnClient new.\rclient url: \'http://localhost:1701/getResources\'.\rresponse := client get.\rTranscript show: response contents; cr.'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-01T21:51:33.565168-05:00' ],
+		#self : OmReference [ '52' ]
+	},
+	#content : '| server |\r(ZnServer defaultOn: 1701)\rlogToTranscript;\rstart.\r\rZnClient new \r  url: ZnServer default localUrl; \r  addPathSegment: #echo; \r  entity: (ZnEntity text: \'Hello\'); \r  post.\r\rclient := ZnClient new.\rclient url: \'http://localhost:1701/getResources\'.\rresponse := client get.\rTranscript show: response contents; cr.'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-01T21:57:27.645558-05:00' ],
+		#self : OmReference [ '53' ]
+	},
+	#content : '| server |\r(ZnServer defaultOn: 1701)\rlogToTranscript;\rstart.\r\rZnServer default delegate: MyRequestHandler new.\r\r\rZnClient new \r  url: ZnServer default localUrl; \r  addPathSegment: #echo; \r  entity: (ZnEntity text: \'Hello\'); \r  post.\r\rclient := ZnClient new.\rclient url: \'http://localhost:1701/getResources\'.\rresponse := client get.\rTranscript show: response contents; cr.'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-01T21:58:10.05414-05:00' ],
+		#self : OmReference [ '54' ]
+	},
+	#content : '| server |\r(ZnServer defaultOn: 1701)\rlogToTranscript;\rstart.\r\rZnServer default delegate:  new.\r\r\rZnClient new \r  url: ZnServer default localUrl; \r  addPathSegment: #echo; \r  entity: (ZnEntity text: \'Hello\'); \r  post.\r\rclient := ZnClient new.\rclient url: \'http://localhost:1701/getResources\'.\rresponse := client get.\rTranscript show: response contents; cr.'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-01T22:25:15.096176-05:00' ],
+		#self : OmReference [ '55' ]
+	},
+	#content : '| server |\r(ZnServer defaultOn: 1701)\rlogToTranscript;\rstart.\r\rZnServer default delegate:  new.\r\r\rZnClient new \r  url: ZnServer default localUrl; \r  addPathSegment: #echo; \r  entity: (ZnEntity text: \'Hello\'); \r  post.'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-01T22:26:00.532176-05:00' ],
+		#self : OmReference [ '56' ]
+	},
+	#content : '| server |\r(ZnServer defaultOn: 1701)\rlogToTranscript;\rstart.\r\rZnServer default delegate:  new.\r\r\rZnClient new \r  url: ZnServer default localUrl; \r  addPathSegment: #echo; \r  entity: (ZnEntity text: \'Hello\'); \r  post.\r\rclient := ZnClient new.\rclient url: \'http://localhost:1701/getResources\'.\rresponse := client get.\rTranscript show: response contents; cr.'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-01T22:26:23.471478-05:00' ],
+		#self : OmReference [ '57' ]
+	},
+	#content : '| server |\r(ZnServer defaultOn: 1701)\rlogToTranscript;\rstart.\r\rZnServer default delegate:  new.\r\r\rZnClient new \r  url: ZnServer default localUrl; \r  addPathSegment: #echo; \r  entity: (ZnEntity text: \'Hello\'); \r  post.'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-01T22:27:48.080143-05:00' ],
+		#self : OmReference [ '58' ]
+	},
+	#content : '| server |\r(ZnServer defaultOn: 1701)\rlogToTranscript;\rstart.\r\rZnServer default delegate: GuildAPI new.\r\r\rZnClient new \r  url: ZnServer default localUrl; \r  addPathSegment: #echo; \r  entity: (ZnEntity text: \'Hello\'); \r  post.'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-01T22:28:42.468266-05:00' ],
+		#self : OmReference [ '59' ]
+	},
+	#content : '| server |\r(ZnServer defaultOn: 1701)\rlogToTranscript;\rstart.\r\rhandler := GuildAPI new.\r\rZnServer default delegate: handler.\r\r\rZnClient new \r  url: ZnServer default localUrl; \r  addPathSegment: #echo; \r  entity: (ZnEntity text: \'Hello\'); \r  post.'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-01T22:41:38.799743-05:00' ],
+		#self : OmReference [ '60' ]
+	},
+	#content : '\r\r| server |\r(ZnServer defaultOn: 1701)\rlogToTranscript;\rstart.\r\rMetacello new\r    baseline: \'STON\';\r    repository: \'github://ObjectProfile/STON\';\r    load.\r\rhandler := GuildAPI new.\r\rZnServer default delegate: handler.\r\r\rZnClient new \r  url: ZnServer default localUrl; \r  addPathSegment: #echo; \r  entity: (ZnEntity text: \'Hello\'); \r  post.'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-01T22:42:07.386695-05:00' ],
+		#self : OmReference [ '61' ]
+	},
+	#content : '\r\r| server |\r(ZnServer defaultOn: 1701)\rlogToTranscript;\rstart.\r\rMetacello new\r\tbaseline: \'Ston\';\r\trepository: \'github://svenvc/ston/repository\';\r\tload\r\rhandler := GuildAPI new.\r\rZnServer default delegate: handler.\r\r\rZnClient new \r  url: ZnServer default localUrl; \r  addPathSegment: #echo; \r  entity: (ZnEntity text: \'Hello\'); \r  post.'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-01T22:42:11.216129-05:00' ],
+		#self : OmReference [ '62' ]
+	},
+	#content : '\r\r| server |\r(ZnServer defaultOn: 1701)\rlogToTranscript;\rstart.\r\rMetacello new\r\tbaseline: \'Ston\';\r\trepository: \'github://svenvc/ston/repository\';\r\tload.\r\rhandler := GuildAPI new.\r\rZnServer default delegate: handler.\r\r\rZnClient new \r  url: ZnServer default localUrl; \r  addPathSegment: #echo; \r  entity: (ZnEntity text: \'Hello\'); \r  post.'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-01T22:42:34.980485-05:00' ],
+		#self : OmReference [ '63' ]
+	},
+	#content : '\r\r| server |\r(ZnServer defaultOn: 1701)\rlogToTranscript;\rstart.\r\rhandler := GuildAPI new.\r\rZnServer default delegate: handler.\r\r\rZnClient new \r  url: ZnServer default localUrl; \r  addPathSegment: #echo; \r  entity: (ZnEntity text: \'Hello\'); \r  post.'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-01T22:43:15.542823-05:00' ],
+		#self : OmReference [ '64' ]
+	},
+	#content : '\r\r| server |\r(ZnServer defaultOn: 1701)\rlogToTranscript;\rstart.\r\rJSONStore := Dictionary new.\rServerLastId := 0.\r\r\rhandler := GuildAPI new.\r\rZnServer default delegate: handler.\r\r\rZnClient new \r  url: ZnServer default localUrl; \r  addPathSegment: #echo; \r  entity: (ZnEntity text: \'Hello\'); \r  post.'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-01T22:43:54.268671-05:00' ],
+		#self : OmReference [ '65' ]
+	},
+	#content : '\r\r| server |\r(ZnServer defaultOn: 1701)\rlogToTranscript;\rstart.\r\rhandler := GuildAPI new.\r\rZnServer default delegate: handler.\r\r\rZnClient new \r  url: ZnServer default localUrl; \r  addPathSegment: #echo; \r  entity: (ZnEntity text: \'Hello\'); \r  post.'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-01T22:47:07.779381-05:00' ],
+		#self : OmReference [ '66' ]
+	},
+	#content : '| jsonEntityBuilder |\rjsonEntityBuilder := [ :object |\r    ZnEntity\r        with: ((String streamContents: [ :stream |\r            STON jsonWriter\r                on: stream;\r                prettyPrint: true;\r                nextPut: object.\r            stream cr ])\r            replaceAll: Character cr with: Character lf)\r        type: ZnMimeType applicationJson ].\r\r| mapper |\rmapper := {\r    [ :request | \r        request uri isSlash and: [ request method = #GET ] ] -> \r        [ :request | ZnResponse ok: (jsonEntityBuilder value: JSONStore keys asArray) ].\r\r    [ :request | \r        request uri pathSegments size = 1 and: [ request method = #GET ] ] ->\r        [ :request | \r            | uri |\r            uri := request uri pathPrintString.\r            JSONStore at: uri ifPresent: [ :object |\r                ZnResponse ok: (jsonEntityBuilder value: object) ]\r                ifAbsent: [ ZnResponse notFound: uri ] ].\r\r    [ :request | \r        (request uri isSlash and: [ request method = #POST ]) and: [ request contentType = ZnMimeType applicationJson ] ] ->\r        [ :request | \r            | uri |\r            uri := \'/\', (ServerLastId := ServerLastId + 1) asString.\r            JSONStore at: uri put: (STON fromString: request contents).\r            ZnResponse created: uri entity: (jsonEntityBuilder value: \'Created \', uri) ].\r\r    [ :request | \r        (request uri pathSegments size = 1 and: [ request method = #PUT ]) and: [ request contentType = ZnMimeType applicationJson ] ] ->\r        [ :request | \r            | uri |\r            uri := request uri pathPrintString.\r            (JSONStore includesKey: uri) \r                ifTrue: [\r                    JSONStore at: uri put: (STON fromString: request contents).\r                    ZnResponse ok: (jsonEntityBuilder value: \'Updated\') ]\r                ifFalse: [ ZnResponse notFound: uri ] ].\r\r    [ :request | \r        request uri pathSegments size = 1 and: [ request method = #DELETE ] ] ->\r        [ :request | \r            | uri |\r            uri := request uri pathPrintString.\r            (JSONStore removeKey: uri ifAbsent: [ nil ]) \r                ifNil: [ ZnResponse notFound: uri ]\r                ifNotNil: [ ZnResponse ok: (jsonEntityBuilder value: \'Deleted\') ] ].\r}.\r\r| server |\r(ZnServer defaultOn: 1701)\rlogToTranscript;\rstart.\r\rhandler := GuildAPI new.\r\rZnServer default delegate: handler.\r\r\rZnClient new \r  url: ZnServer default localUrl; \r  addPathSegment: #echo; \r  entity: (ZnEntity text: \'Hello\'); \r  post.'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-01T22:47:32.733428-05:00' ],
+		#self : OmReference [ '67' ]
+	},
+	#content : 'JSONStore := Dictionary new.   "Create an empty dictionary to hold the stored JSON objects"\rServerLastId := 0.     \r\r| jsonEntityBuilder |\rjsonEntityBuilder := [ :object |\r    ZnEntity\r        with: ((String streamContents: [ :stream |\r            STON jsonWriter\r                on: stream;\r                prettyPrint: true;\r                nextPut: object.\r            stream cr ])\r            replaceAll: Character cr with: Character lf)\r        type: ZnMimeType applicationJson ].\r\r| mapper |\rmapper := {\r    [ :request | \r        request uri isSlash and: [ request method = #GET ] ] -> \r        [ :request | ZnResponse ok: (jsonEntityBuilder value: JSONStore keys asArray) ].\r\r    [ :request | \r        request uri pathSegments size = 1 and: [ request method = #GET ] ] ->\r        [ :request | \r            | uri |\r            uri := request uri pathPrintString.\r            JSONStore at: uri ifPresent: [ :object |\r                ZnResponse ok: (jsonEntityBuilder value: object) ]\r                ifAbsent: [ ZnResponse notFound: uri ] ].\r\r    [ :request | \r        (request uri isSlash and: [ request method = #POST ]) and: [ request contentType = ZnMimeType applicationJson ] ] ->\r        [ :request | \r            | uri |\r            uri := \'/\', (ServerLastId := ServerLastId + 1) asString.\r            JSONStore at: uri put: (STON fromString: request contents).\r            ZnResponse created: uri entity: (jsonEntityBuilder value: \'Created \', uri) ].\r\r    [ :request | \r        (request uri pathSegments size = 1 and: [ request method = #PUT ]) and: [ request contentType = ZnMimeType applicationJson ] ] ->\r        [ :request | \r            | uri |\r            uri := request uri pathPrintString.\r            (JSONStore includesKey: uri) \r                ifTrue: [\r                    JSONStore at: uri put: (STON fromString: request contents).\r                    ZnResponse ok: (jsonEntityBuilder value: \'Updated\') ]\r                ifFalse: [ ZnResponse notFound: uri ] ].\r\r    [ :request | \r        request uri pathSegments size = 1 and: [ request method = #DELETE ] ] ->\r        [ :request | \r            | uri |\r            uri := request uri pathPrintString.\r            (JSONStore removeKey: uri ifAbsent: [ nil ]) \r                ifNil: [ ZnResponse notFound: uri ]\r                ifNotNil: [ ZnResponse ok: (jsonEntityBuilder value: \'Deleted\') ] ].\r}.\r\r| server |\r(ZnServer defaultOn: 1701)\rlogToTranscript;\rstart.\r\rhandler := GuildAPI new.\r\rZnServer default delegate: handler.\r\r\rZnClient new \r  url: ZnServer default localUrl; \r  addPathSegment: #echo; \r  entity: (ZnEntity text: \'Hello\'); \r  post.'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-01T22:47:39.878101-05:00' ],
+		#self : OmReference [ '68' ]
+	},
+	#content : '"Step 1: Initialize global variables"\rJSONStore := Dictionary new.\rServerLastId := 0.\r\r"Step 2: Define jsonEntityBuilder block"\r| jsonEntityBuilder |\rjsonEntityBuilder := [ :object |\r    ZnEntity\r        with: ((String streamContents: [ :stream |\r            STON jsonWriter\r                on: stream;\r                prettyPrint: true;\r                nextPut: object.\r            stream cr ])\r            replaceAll: Character cr with: Character lf)\r        type: ZnMimeType applicationJson ].\r\r"Step 3: Define the mapper block"\r| mapper |\rmapper := {\r    [ :request | \r        request uri isSlash and: [ request method = #GET ] ] -> \r        [ :request | ZnResponse ok: (jsonEntityBuilder value: JSONStore keys asArray) ].\r\r    [ :request | \r        request uri pathSegments size = 1 and: [ request method = #GET ] ] ->\r        [ :request | \r            | uri |\r            uri := request uri pathPrintString.\r            JSONStore at: uri ifPresent: [ :object |\r                ZnResponse ok: (jsonEntityBuilder value: object) ]\r                ifAbsent: [ ZnResponse notFound: uri ] ].\r\r    [ :request | \r        (request uri isSlash and: [ request method = #POST ]) and: [ request contentType = ZnMimeType applicationJson ] ] ->\r        [ :request | \r            | uri |\r            uri := \'/\', (ServerLastId := ServerLastId + 1) asString.\r            JSONStore at: uri put: (STON fromString: request contents).\r            ZnResponse created: uri entity: (jsonEntityBuilder value: \'Created \', uri) ].\r\r    [ :request | \r        (request uri pathSegments size = 1 and: [ request method = #PUT ]) and: [ request contentType = ZnMimeType applicationJson ] ] ->\r        [ :request | \r            | uri |\r            uri := request uri pathPrintString.\r            (JSONStore includesKey: uri) \r                ifTrue: [\r                    JSONStore at: uri put: (STON fromString: request contents).\r                    ZnResponse ok: (jsonEntityBuilder value: \'Updated\') ]\r                ifFalse: [ ZnResponse notFound: uri ] ].\r\r    [ :request | \r        request uri pathSegments size = 1 and: [ request method = #DELETE ] ] ->\r        [ :request | \r            | uri |\r            uri := request uri pathPrintString.\r            (JSONStore removeKey: uri ifAbsent: [ nil ]) \r                ifNil: [ ZnResponse notFound: uri ]\r                ifNotNil: [ ZnResponse ok: (jsonEntityBuilder value: \'Deleted\') ] ].\r}.\r\r"Step 4: Start the Zinc server and respond to requests"\r(ZnServer startDefaultOn: 1701)\r    logToTranscript;\r    onRequestRespond: [ :request |\r        (mapper detect: [ :each | each key value: request ] ifNone: [ nil ])\r            ifNil: [ ZnResponse badRequest: request ]\r            ifNotNil: [ :handler | handler value value: request ] ].\r'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-01T22:49:49.446948-05:00' ],
+		#self : OmReference [ '69' ]
+	},
+	#content : '"Step 1: Initialize global variables"\rJSONStore := Dictionary new.\rServerLastId := 0.\r\r"Step 2: Define jsonEntityBuilder block"\r| jsonEntityBuilder |\rjsonEntityBuilder := [ :object |\r    ZnEntity\r        with: ((String streamContents: [ :stream |\r            STON jsonWriter\r                on: stream;\r                prettyPrint: true;\r                nextPut: object.\r            stream cr ])\r            replaceAll: Character cr with: Character lf)\r        type: ZnMimeType applicationJson ].\r\r"Step 3: Define the mapper block with conditions"\r| mapper |\rmapper := Array new.\rmapper add: [\r    [ :request | \r        request uri isSlash and: [ request method = #GET ] ] -> \r        [ :request | ZnResponse ok: (jsonEntityBuilder value: JSONStore keys asArray) ]\r].\r\rmapper add: [\r    [ :request | \r        request uri pathSegments size = 1 and: [ request method = #GET ] ] -> \r        [ :request | \r            | uri |\r            uri := request uri pathPrintString.\r            JSONStore at: uri ifPresent: [ :object |\r                ZnResponse ok: (jsonEntityBuilder value: object) ]\r                ifAbsent: [ ZnResponse notFound: uri ] ]\r].\r\rmapper add: [\r    [ :request | \r        (request uri isSlash and: [ request method = #POST ]) \r        and: [ request contentType = ZnMimeType applicationJson ] ] -> \r        [ :request | \r            | uri |\r            uri := \'/\', (ServerLastId := ServerLastId + 1) asString.\r            JSONStore at: uri put: (STON fromString: request contents).\r            ZnResponse created: uri entity: (jsonEntityBuilder value: \'Created \', uri) ]\r].\r\rmapper add: [\r    [ :request | \r        (request uri pathSegments size = 1 and: [ request method = #PUT ]) \r        and: [ request contentType = ZnMimeType applicationJson ] ] -> \r        [ :request | \r            | uri |\r            uri := request uri pathPrintString.\r            (JSONStore includesKey: uri) \r                ifTrue: [\r                    JSONStore at: uri put: (STON fromString: request contents).\r                    ZnResponse ok: (jsonEntityBuilder value: \'Updated\') ]\r                ifFalse: [ ZnResponse notFound: uri ] ]\r].\r\rmapper add: [\r    [ :request | \r        request uri pathSegments size = 1 and: [ request method = #DELETE ] ] -> \r        [ :request | \r            | uri |\r            uri := request uri pathPrintString.\r            (JSONStore removeKey: uri ifAbsent: [ nil ]) \r                ifNil: [ ZnResponse notFound: uri ]\r                ifNotNil: [ ZnResponse ok: (jsonEntityBuilder value: \'Deleted\') ] ]\r].\r\r"Step 4: Start the Zinc server and respond to requests"\r(ZnServer startDefaultOn: 1701)\r    logToTranscript;\r    onRequestRespond: [ :request |\r        (mapper detect: [ :each | each key value: request ] ifNone: [ nil ])\r            ifNil: [ ZnResponse badRequest: request ]\r            ifNotNil: [ :handler | handler value value: request ] ].\r'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-01T22:50:17.38565-05:00' ],
+		#self : OmReference [ '70' ]
+	},
+	#content : '\r\r| server |\r(ZnServer defaultOn: 1701)\rlogToTranscript;\rstart.\r\r\rhandler := GuildAPI new.\r\rZnServer default delegate: handler.\r\r\rZnClient new \r  url: ZnServer default localUrl; \r  addPathSegment: #echo; \r  entity: (ZnEntity text: \'Hello\'); \r  post.'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-01T23:00:59.279894-05:00' ],
+		#self : OmReference [ '71' ]
+	},
+	#content : '\r\r\'| server |\r(ZnServer defaultOn: 1701)\rlogToTranscript;\rstart.\r\r\rhandler := GuildAPI new.\r\rZnServer default delegate: handler.\r\r\rZnClient new \r  url: ZnServer default localUrl; \r  addPathSegment: #echo; \r  entity: (ZnEntity text: \'\'Hello\'\'); \r  post.\''
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-01T23:01:25.401601-05:00' ],
+		#self : OmReference [ '72' ]
+	},
+	#content : '\r\r| server |\r(ZnServer defaultOn: 1701)\rlogToTranscript;\rstart.\r\r\rhandler := GuildAPI new.\r\rZnServer default delegate: handler.\r\r\rZnClient new \r  url: ZnServer default localUrl; \r  addPathSegment: #echo; \r  entity: (ZnEntity text: \'Hello\'); \r  post.'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-01T23:01:32.129225-05:00' ],
+		#self : OmReference [ '73' ]
+	},
+	#content : '\r\rMetacello new \r\trepository: \'github://demarey/Teapot/repository\';\r\tbaseline: \'Teapot\';\r\tload'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-01T23:01:45.0084-05:00' ],
+		#self : OmReference [ '74' ]
+	},
+	#content : 'Metacello new \r\trepository: \'github://astares/Tealight/repository\';\r\tbaseline: \'Tealight\';\r\tload'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-01T23:02:54.710944-05:00' ],
+		#self : OmReference [ '75' ]
+	},
+	#content : 'TLWebserver teapot.\r'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-01T23:03:07.004008-05:00' ],
+		#self : OmReference [ '76' ]
+	},
+	#content : 'TLWebserver teapot \r\tGET: \'/hi\' -> \'HelloWorld\'.\r\r'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-01T23:03:55.112786-05:00' ],
+		#self : OmReference [ '77' ]
+	},
+	#content : 'TLWebserver teapot \r\tGET: \'/hi\' -> \'HelloWorld\'.\r\rTLWebserver teapot inspect.\r'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-01T23:04:33.616664-05:00' ],
+		#self : OmReference [ '78' ]
+	},
+	#content : 'TLWebserver teapot \r\tGET: \'/hi\' -> \'HelloWorld\'.\r\r'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-01T23:15:09.936644-05:00' ],
+		#self : OmReference [ '79' ]
+	},
+	#content : 'Object subclass: #GuildDatabase\r    instanceVariableNames: \'connection\'\r    classVariableNames: \'Instance\'\r    poolDictionaries: \'\'\r    category: \'GuildApp\'!\r'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-01T23:15:19.257776-05:00' ],
+		#self : OmReference [ '80' ]
+	},
+	#content : 'Object subclass: #GuildDatabase\r    instanceVariableNames: \'connection\'\r    classVariableNames: \'Instance\'\r    poolDictionaries: \'\'\r    category: \'GuildApp\'\r'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-01T23:15:37.812249-05:00' ],
+		#self : OmReference [ '81' ]
+	},
+	#content : '\r!GuildDatabase class >> initialize\r    Instance := self new.\r    Instance connectToDatabase: (Smalltalk imageDirectory / \'guilds.db\') fullName.\r    Instance createTables!'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-01T23:15:41.732161-05:00' ],
+		#self : OmReference [ '82' ]
+	},
+	#content : '\rGuildDatabase class >> initialize\r    Instance := self new.\r    Instance connectToDatabase: (Smalltalk imageDirectory / \'guilds.db\') fullName.\r    Instance createTables!'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-01T23:22:40.43983-05:00' ],
+		#self : OmReference [ '83' ]
+	},
+	#content : 'Object subclass: #GuildDatabase\r    instanceVariableNames: \'connection\'\r    classVariableNames: \'Instance\'\r    poolDictionaries: \'\'\r    category: \'GuildApp-Database\'\r'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-01T23:45:52.271801-05:00' ],
+		#self : OmReference [ '84' ]
+	},
+	#content : 'TLWebserver teapot \r\tGET: \'/api/resources\' -> \'HelloWorld\'\r'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-01T23:48:12.104034-05:00' ],
+		#self : OmReference [ '85' ]
+	},
+	#content : 'TLWebserver teapot \r\tGET: \'/api/resources\' -> \'HelloWorld\'\r\t\r\r'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-01T23:50:25.151041-05:00' ],
+		#self : OmReference [ '86' ]
+	},
+	#content : 'dbFile := (Smalltalk imageDirectory / \'guilds.db\') fullName.\rconnection := SQLite3Connection on: dbFile.\rconnection open.\r"Table for guild resources"\rconnection execute: \'CREATE TABLE IF NOT EXISTS resources (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    amount INTEGER,\r    changePerDay INTEGER\r  );\'.\r\r"Table for guild members"\rconnection execute: \'CREATE TABLE IF NOT EXISTS members (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    role TEXT,\r    tasks TEXT\r  );\'.\r\rTLWebserver teapot \r\tGET: \'/api/resources\' -> connection execute \'\'.\r\t\r\r'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-01T23:51:43.730234-05:00' ],
+		#self : OmReference [ '87' ]
+	},
+	#content : 'dbFile := (Smalltalk imageDirectory / \'guilds.db\') fullName.\rconnection := SQLite3Connection on: dbFile.\rconnection open.\r"Table for guild resources"\rconnection execute: \'CREATE TABLE IF NOT EXISTS resources (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    amount INTEGER,\r    changePerDay INTEGER\r  );\'.\r\r"Table for guild members"\rconnection execute: \'CREATE TABLE IF NOT EXISTS members (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    role TEXT,\r    tasks TEXT\r  );\'.\r\rTLWebserver teapot \r\tGET: \'/api/resources\' -> connection execute \'SELECT * FROM resources;\'.\r\t\r\r'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-01T23:52:21.864771-05:00' ],
+		#self : OmReference [ '88' ]
+	},
+	#content : 'dbFile := (Smalltalk imageDirectory / \'guilds.db\') fullName.\rconnection := SQLite3Connection on: dbFile.\rconnection open.\r"Table for guild resources"\rconnection execute: \'CREATE TABLE IF NOT EXISTS resources (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    amount INTEGER,\r    changePerDay INTEGER\r  );\'.\r\r"Table for guild members"\rconnection execute: \'CREATE TABLE IF NOT EXISTS members (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    role TEXT,\r    tasks TEXT\r  );\'.\r\rTLWebserver teapot \r\tGET: \'/api/resources\' -> connection execute: \'SELECT * FROM resources;\'.\r\t\r\r'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-01T23:53:00.13812-05:00' ],
+		#self : OmReference [ '89' ]
+	},
+	#content : 'dbFile := (Smalltalk imageDirectory / \'guilds.db\') fullName.\rconnection := SQLite3Connection on: dbFile.\rconnection open.\r"Table for guild resources"\rconnection execute: \'CREATE TABLE IF NOT EXISTS resources (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    amount INTEGER,\r    changePerDay INTEGER\r  );\'.\r\r"Table for guild members"\rconnection execute: \'CREATE TABLE IF NOT EXISTS members (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    role TEXT,\r    tasks TEXT\r  );\'.\r\rTLWebserver teapot \r\tGET: \'/api/resources\' -> [connection execute: \'SELECT * FROM resources;\'.]\r\t\r\r'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-01T23:53:45.424864-05:00' ],
+		#self : OmReference [ '90' ]
+	},
+	#content : 'dbFile := (Smalltalk imageDirectory / \'guilds.db\') fullName.\rconnection := SQLite3Connection on: dbFile.\rconnection open.\r"Table for guild resources"\rconnection execute: \'CREATE TABLE IF NOT EXISTS resources (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    amount INTEGER,\r    changePerDay INTEGER\r  );\'.\r\r"Table for guild members"\rconnection execute: \'CREATE TABLE IF NOT EXISTS members (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    role TEXT,\r    tasks TEXT\r  );\'.\r\rTLWebserver teapot \r\tGET: \'/api/resources\' -> [\r\t\tresult := connection execute: \'SELECT * FROM resources;\'.\r\t\t\r\t\t]\r\t\r\r'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-01T23:57:39.913148-05:00' ],
+		#self : OmReference [ '91' ]
+	},
+	#content : 'dbFile := (Smalltalk imageDirectory / \'guilds.db\') fullName.\rconnection := SQLite3Connection on: dbFile.\rconnection open.\r"Table for guild resources"\rconnection execute: \'CREATE TABLE IF NOT EXISTS resources (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    amount INTEGER,\r    changePerDay INTEGER\r  );\'.\r\r"Table for guild members"\rconnection execute: \'CREATE TABLE IF NOT EXISTS members (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    role TEXT,\r    tasks TEXT\r  );\'.\r\rTLWebserver teapot \r\tGET: \'/api/resources\' -> [\r\t\tconnection execute: \'SELECT * FROM resources;\'. row\r\t\t\r\t\t]\r\t\r\r'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-01T23:58:14.190936-05:00' ],
+		#self : OmReference [ '92' ]
+	},
+	#content : 'dbFile := (Smalltalk imageDirectory / \'guilds.db\') fullName.\rconnection := SQLite3Connection on: dbFile.\rconnection open.\r"Table for guild resources"\rconnection execute: \'CREATE TABLE IF NOT EXISTS resources (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    amount INTEGER,\r    changePerDay INTEGER\r  );\'.\r\r"Table for guild members"\rconnection execute: \'CREATE TABLE IF NOT EXISTS members (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    role TEXT,\r    tasks TEXT\r  );\'.\r\rTLWebserver teapot \r\tGET: \'/api/resources\' -> [\r\t\tconnection execute: \'SELECT * FROM resources;\'. \t\t\r\t\t^row \r\t\t\r\t\t]\r\t\r\r'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-01T23:58:47.512384-05:00' ],
+		#self : OmReference [ '93' ]
+	},
+	#content : 'dbFile := (Smalltalk imageDirectory / \'guilds.db\') fullName.\rconnection := SQLite3Connection on: dbFile.\rconnection open.\r"Table for guild resources"\rconnection execute: \'CREATE TABLE IF NOT EXISTS resources (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    amount INTEGER,\r    changePerDay INTEGER\r  );\'.\r\r"Table for guild members"\rconnection execute: \'CREATE TABLE IF NOT EXISTS members (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    role TEXT,\r    tasks TEXT\r  );\'.\r\rTLWebserver teapot \r\tGET: \'/api/resources\' -> [\r\t\tresult := connection execute: \'SELECT * FROM resources;\'. \t\t\r\t\t\r\t\t\r\t\t]\r\t\r\r'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-01T23:59:17.644393-05:00' ],
+		#self : OmReference [ '94' ]
+	},
+	#content : 'dbFile := (Smalltalk imageDirectory / \'guilds.db\') fullName.\rconnection := SQLite3Connection on: dbFile.\rconnection open.\r"Table for guild resources"\rconnection execute: \'CREATE TABLE IF NOT EXISTS resources (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    amount INTEGER,\r    changePerDay INTEGER\r  );\'.\r\r"Table for guild members"\rconnection execute: \'CREATE TABLE IF NOT EXISTS members (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    role TEXT,\r    tasks TEXT\r  );\'.\r\rTLWebserver teapot \r\tGET: \'/api/resources\' -> [\r\t\tresult := connection execute: \'SELECT * FROM resources;\'. \t\t\r\t\tresult rows.\r\t\t\r\t\t]\r\t\r\r'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-01T23:59:35.599932-05:00' ],
+		#self : OmReference [ '95' ]
+	},
+	#content : 'dbFile := (Smalltalk imageDirectory / \'guilds.db\') fullName.\rconnection := SQLite3Connection on: dbFile.\rconnection open.\r"Table for guild resources"\rconnection execute: \'CREATE TABLE IF NOT EXISTS resources (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    amount INTEGER,\r    changePerDay INTEGER\r  );\'.\r\r"Table for guild members"\rconnection execute: \'CREATE TABLE IF NOT EXISTS members (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    role TEXT,\r    tasks TEXT\r  );\'.\r\rTLWebserver teapot \r\tGET: \'/api/resources\' -> [\r\t\tresult := connection execute: \'SELECT * FROM resources;\'. \t\t\r\t\t^result rows.\r\t\t\r\t\t]\r\t\r\r'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-02T00:02:54.491924-05:00' ],
+		#self : OmReference [ '96' ]
+	},
+	#content : 'dbFile := (Smalltalk imageDirectory / \'guilds.db\') fullName.\rconnection := SQLite3Connection on: dbFile.\rconnection open.\r"Table for guild resources"\rconnection execute: \'CREATE TABLE IF NOT EXISTS resources (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    amount INTEGER,\r    changePerDay INTEGER\r  );\'.\r\r"Table for guild members"\rconnection execute: \'CREATE TABLE IF NOT EXISTS members (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    role TEXT,\r    tasks TEXT\r  );\'.\r\rTLWebserver teapot \r\tGET: \'/api/resources\' -> [\r\t\t| cursor columns rows |\r        cursor := connection execute: \'SELECT * FROM resources;\'.\r        columns := cursor columnNames.\r        rows := cursor asArray collect: [ :row |\r            Dictionary new\r                atAll: (columns with: row collect: [ :col :val | col -> val ]);\r                yourself.\r        ].\r        ^ rows\r\t\t\r\t\t]\r\t\r\r'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-02T00:06:22.907228-05:00' ],
+		#self : OmReference [ '97' ]
+	},
+	#content : 'dbFile := (Smalltalk imageDirectory / \'guilds.db\') fullName.\rconnection := SQLite3Connection on: dbFile.\rconnection open.\r"Table for guild resources"\rconnection execute: \'CREATE TABLE IF NOT EXISTS resources (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    amount INTEGER,\r    changePerDay INTEGER\r  );\'.\r\r"Table for guild members"\rconnection execute: \'CREATE TABLE IF NOT EXISTS members (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    role TEXT,\r    tasks TEXT\r  );\'.\r\rTLWebserver teapot\r    GET: \'/api/resources\' -> [\r        | cursor resultString |\r        cursor := connection execute: \'SELECT * FROM resources;\'.\r        resultString := cursor asArray asString. "Convert rows to a string"\r        cursor close. "Don\'t forget to clean up the cursor"\r        ^ resultString\r    ]\r\t\r\r'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-02T00:06:58.991069-05:00' ],
+		#self : OmReference [ '98' ]
+	},
+	#content : 'dbFile := (Smalltalk imageDirectory / \'guilds.db\') fullName.\rconnection := SQLite3Connection on: dbFile.\rconnection open.\r"Table for guild resources"\rconnection execute: \'CREATE TABLE IF NOT EXISTS resources (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    amount INTEGER,\r    changePerDay INTEGER\r  );\'.\r\r"Table for guild members"\rconnection execute: \'CREATE TABLE IF NOT EXISTS members (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    role TEXT,\r    tasks TEXT\r  );\'.\r\rTLWebserver teapot\r    GET: \'/api/resources\' -> [\r        | cursor resultString |\r        cursor := connection execute: \'SELECT * FROM resources;\'.\r        resultString := cursor asArray asString. \r         ^ resultString\r    ]\r\t\r\r'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-02T00:07:24.779619-05:00' ],
+		#self : OmReference [ '99' ]
+	},
+	#content : 'dbFile := (Smalltalk imageDirectory / \'guilds.db\') fullName.\rconnection := SQLite3Connection on: dbFile.\rconnection open.\r"Table for guild resources"\rconnection execute: \'CREATE TABLE IF NOT EXISTS resources (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    amount INTEGER,\r    changePerDay INTEGER\r  );\'.\r\r"Table for guild members"\rconnection execute: \'CREATE TABLE IF NOT EXISTS members (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    role TEXT,\r    tasks TEXT\r  );\'.\r\rTLWebserver teapot\r    GET: \'/api/resources\' -> [\r        | cursor resultString |\r        cursor := connection execute: \'SELECT * FROM resources;\'.\r        resultString := cursor asString. \r         ^ resultString\r    ]\r\t\r\r'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-02T00:08:48.271285-05:00' ],
+		#self : OmReference [ '100' ]
+	},
+	#content : 'dbFile := (Smalltalk imageDirectory / \'guilds.db\') fullName.\rconnection := SQLite3Connection on: dbFile.\rconnection open.\r"Table for guild resources"\rconnection execute: \'CREATE TABLE IF NOT EXISTS resources (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    amount INTEGER,\r    changePerDay INTEGER\r  );\'.\r\r"Table for guild members"\rconnection execute: \'CREATE TABLE IF NOT EXISTS members (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    role TEXT,\r    tasks TEXT\r  );\'.\r\rTLWebserver teapot\r    GET: \'/api/resources\' -> [\r        | cursor resultString |\r        cursor := connection execute: \'SELECT * FROM resources;\'.\r\t\t\tcursor next.\r        resultString := cursor asString. \r         ^ resultString\r    ]\r\t\r\r'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-02T00:09:01.175818-05:00' ],
+		#self : OmReference [ '101' ]
+	},
+	#content : 'dbFile := (Smalltalk imageDirectory / \'guilds.db\') fullName.\rconnection := SQLite3Connection on: dbFile.\rconnection open.\r"Table for guild resources"\rconnection execute: \'CREATE TABLE IF NOT EXISTS resources (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    amount INTEGER,\r    changePerDay INTEGER\r  );\'.\r\r"Table for guild members"\rconnection execute: \'CREATE TABLE IF NOT EXISTS members (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    role TEXT,\r    tasks TEXT\r  );\'.\r\rTLWebserver teapot\r    GET: \'/api/resources\' -> [\r        | cursor resultString |\r        cursor := connection execute: \'SELECT * FROM resources;\'.\r\t\t\tcursor next.\r\t\t\tcursor row.\r        resultString := cursor asString. \r         ^ resultString\r    ]\r\t\r\r'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-02T00:09:08.053885-05:00' ],
+		#self : OmReference [ '102' ]
+	},
+	#content : 'dbFile := (Smalltalk imageDirectory / \'guilds.db\') fullName.\rconnection := SQLite3Connection on: dbFile.\rconnection open.\r"Table for guild resources"\rconnection execute: \'CREATE TABLE IF NOT EXISTS resources (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    amount INTEGER,\r    changePerDay INTEGER\r  );\'.\r\r"Table for guild members"\rconnection execute: \'CREATE TABLE IF NOT EXISTS members (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    role TEXT,\r    tasks TEXT\r  );\'.\r\rTLWebserver teapot\r    GET: \'/api/resources\' -> [\r        | cursor resultString |\r        cursor := connection execute: \'SELECT * FROM resources;\'.\r\t\t\tcursor next.\r\t\t\tcursor rows.\r        resultString := cursor asString. \r         ^ resultString\r    ]\r\t\r\r'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-02T00:13:41.321459-05:00' ],
+		#self : OmReference [ '103' ]
+	},
+	#content : 'dbFile := (Smalltalk imageDirectory / \'guilds.db\') fullName.\rconnection := SQLite3Connection on: dbFile.\rconnection open.\r"Table for guild resources"\rconnection execute: \'CREATE TABLE IF NOT EXISTS resources (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    amount INTEGER,\r    changePerDay INTEGER\r  );\'.\r\r"Table for guild members"\rconnection execute: \'CREATE TABLE IF NOT EXISTS members (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    role TEXT,\r    tasks TEXT\r  );\'.\r\rTLWebserver teapot\r    GET: \'/api/resources\' -> [\r        | cursor resultString |\r        cursor := connection execute: \'SELECT * FROM resources;\'.\r\t\t\tcursor next.\r\t\t\tcursor rows.\r        resultString := cursor stringValue. \r         ^ resultString\r    ]\r\t\r\r'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-02T00:16:49.647041-05:00' ],
+		#self : OmReference [ '104' ]
+	},
+	#content : 'dbFile := (Smalltalk imageDirectory / \'guilds.db\') fullName.\rconnection := SQLite3Connection on: dbFile.\rconnection open.\r"Table for guild resources"\rconnection execute: \'CREATE TABLE IF NOT EXISTS resources (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    amount INTEGER,\r    changePerDay INTEGER\r  );\'.\r\r"Table for guild members"\rconnection execute: \'CREATE TABLE IF NOT EXISTS members (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    role TEXT,\r    tasks TEXT\r  );\'.\r\rTLWebserver teapot\r    GET: \'/api/resources\' -> [\r        | cursor resultString |\r        cursor := connection execute: \'SELECT * FROM resources;\'.\r\t\t\tcursor next.\r\t\t\tcursor rows.\r         ^ resultString\r    ]\r\t\r\r'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-02T00:19:22.302783-05:00' ],
+		#self : OmReference [ '105' ]
+	},
+	#content : 'dbFile := (Smalltalk imageDirectory / \'guilds.db\') fullName.\rconnection := SQLite3Connection on: dbFile.\rconnection open.\r"Table for guild resources"\rconnection execute: \'CREATE TABLE IF NOT EXISTS resources (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    amount INTEGER,\r    changePerDay INTEGER\r  );\'.\r\r"Table for guild members"\rconnection execute: \'CREATE TABLE IF NOT EXISTS members (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    role TEXT,\r    tasks TEXT\r  );\'.\r\rTLWebserver teapot\r    GET: \'/api/resources\' -> [\r        | cursor rows columns |\r        "Execute query and get cursor"\r        cursor := connection execute: \'SELECT * FROM resources;\'.\r        \r        "Materialize all rows into a collection"\r        rows := cursor asArray.\r        \r        "Get column names for dictionary keys"\r        columns := cursor columnNames.\r        \r        "Close cursor to clean up"\r        cursor close.\r        \r        "Convert rows to Dictionaries with column keys"\r        rows := rows collect: [ :rowArray |\r            Dictionary with: (columns with: rowArray asArray)\r        ].\r        \r        "Return as JSON string explicitly"\r        ^ NeoJSONWriter toString: rows\r    ]\r\t\r\r'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-02T00:20:57.671112-05:00' ],
+		#self : OmReference [ '106' ]
+	},
+	#content : 'dbFile := (Smalltalk imageDirectory / \'guilds.db\') fullName.\rconnection := SQLite3Connection on: dbFile.\rconnection open.\r"Table for guild resources"\rconnection execute: \'CREATE TABLE IF NOT EXISTS resources (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    amount INTEGER,\r    changePerDay INTEGER\r  );\'.\r\r"Table for guild members"\rconnection execute: \'CREATE TABLE IF NOT EXISTS members (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    role TEXT,\r    tasks TEXT\r  );\'.\r\rTLWebserver teapot\r    GET: \'/api/resources\' -> [\r        | cursor rows |\r        \r        "Execute query"\r        cursor := connection execute: \'SELECT * FROM resources;\'.\r        \r        "Force Pharo to read ALL rows from the cursor"\r        rows := cursor asArray collect: [ :row | row asArray ].\r        \r        "Close the cursor to free resources"\r        cursor close.\r        \r        "Convert to JSON string (install NeoJSON if needed)"\r        ^ NeoJSON toString: {\r            \'success\' -> true.\r            \'data\' -> rows\r        }\r    ]\r\t\r\r'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-02T00:21:24.537718-05:00' ],
+		#self : OmReference [ '107' ]
+	},
+	#content : 'dbFile := (Smalltalk imageDirectory / \'guilds.db\') fullName.\rconnection := SQLite3Connection on: dbFile.\rconnection open.\r"Table for guild resources"\rconnection execute: \'CREATE TABLE IF NOT EXISTS resources (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    amount INTEGER,\r    changePerDay INTEGER\r  );\'.\r\r"Table for guild members"\rconnection execute: \'CREATE TABLE IF NOT EXISTS members (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    role TEXT,\r    tasks TEXT\r  );\'.\r\rTLWebserver teapot\r    GET: \'/api/resources\' -> [\r        | cursor rows |\r        \r        "Execute query"\r        cursor := connection execute: \'SELECT * FROM resources;\'.\r        \r        "Force Pharo to read ALL rows from the cursor"\r        rows := cursor asArray collect: [ :row | row asArray ].\r        \r        "Close the cursor to free resources"\r        cursor close.\r        \r        "Convert to JSON string (install NeoJSON if needed)"\r        ^ NeoJSONObject toString: {\r            \'success\' -> true.\r            \'data\' -> rows\r        }\r    ]\r\t\r\r'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-02T00:35:17.247582-05:00' ],
+		#self : OmReference [ '108' ]
+	},
+	#content : 'dbFile := (Smalltalk imageDirectory / \'guilds.db\') fullName.\rconnection := SQLite3Connection on: dbFile.\rconnection open.\r"Table for guild resources"\rconnection execute: \'CREATE TABLE IF NOT EXISTS resources (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    amount INTEGER,\r    changePerDay INTEGER\r  );\'.\r\r"Table for guild members"\rconnection execute: \'CREATE TABLE IF NOT EXISTS members (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    role TEXT,\r    tasks TEXT\r  );\'.\r\rcursor := connection execute: \'SELECT * FROM resources;\'.\r\r\r\rTLWebserver teapot\r    GET: \'/api/resources\' -> [\r        | cursor rows |\r        \r        "Execute query"\r        cursor := connection execute: \'SELECT * FROM resources;\'.\r        \r    ]\r\t\r\r'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-02T00:36:00.062006-05:00' ],
+		#self : OmReference [ '109' ]
+	},
+	#content : 'dbFile := (Smalltalk imageDirectory / \'guilds.db\') fullName.\rconnection := SQLite3Connection on: dbFile.\rconnection open.\r"Table for guild resources"\rconnection execute: \'CREATE TABLE IF NOT EXISTS resources (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    amount INTEGER,\r    changePerDay INTEGER\r  );\'.\r\r"Table for guild members"\rconnection execute: \'CREATE TABLE IF NOT EXISTS members (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    role TEXT,\r    tasks TEXT\r  );\'.\r\rcursor := connection execute: \'SELECT * FROM resources;\'.\r\r^cursor next.\r^cursor rows.\r\r\rTLWebserver teapot\r    GET: \'/api/resources\' -> [\r        | cursor rows |\r        \r        "Execute query"\r        cursor := connection execute: \'SELECT * FROM resources;\'.\r        \r    ]\r\t\r\r'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-02T00:36:25.693786-05:00' ],
+		#self : OmReference [ '110' ]
+	},
+	#content : 'dbFile := (Smalltalk imageDirectory / \'guilds.db\') fullName.\rconnection := SQLite3Connection on: dbFile.\rconnection open.\r"Table for guild resources"\rconnection execute: \'CREATE TABLE IF NOT EXISTS resources (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    amount INTEGER,\r    changePerDay INTEGER\r  );\'.\r\r"Table for guild members"\rconnection execute: \'CREATE TABLE IF NOT EXISTS members (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    role TEXT,\r    tasks TEXT\r  );\'.\r\rcursor := connection execute: \'SELECT * FROM resources;\'.\r\r^cursor next.\r^cursor id.\r\r\rTLWebserver teapot\r    GET: \'/api/resources\' -> [\r        | cursor rows |\r        \r        "Execute query"\r        cursor := connection execute: \'SELECT * FROM resources;\'.\r        \r    ]\r\t\r\r'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-02T00:37:00.195533-05:00' ],
+		#self : OmReference [ '111' ]
+	},
+	#content : 'dbFile := (Smalltalk imageDirectory / \'guilds.db\') fullName.\rconnection := SQLite3Connection on: dbFile.\rconnection open.\r"Table for guild resources"\rconnection execute: \'CREATE TABLE IF NOT EXISTS resources (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    amount INTEGER,\r    changePerDay INTEGER\r  );\'.\r\r"Table for guild members"\rconnection execute: \'CREATE TABLE IF NOT EXISTS members (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    role TEXT,\r    tasks TEXT\r  );\'.\r\rcursor := connection execute: \'SELECT * FROM resources;\'.\r\r^cursor next.\r\r\r\rTLWebserver teapot\r    GET: \'/api/resources\' -> [\r        | cursor rows |\r        \r        "Execute query"\r        cursor := connection execute: \'SELECT * FROM resources;\'.\r        \r    ]\r\t\r\r'
+}

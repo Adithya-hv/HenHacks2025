@@ -1,0 +1,88 @@
+OmEntry {
+	#tags : {
+		#author : 'Unknown',
+		#time : DateAndTime [ '2025-03-02T00:45:04.380615-05:00' ],
+		#prior : OmReference [ 'Pharo11-SNAPSHOT-64bit-cf2c3fee23.24C4AB46778', '2358' ],
+		#self : OmReference [ '1' ]
+	},
+	#content : EpSessionSnapshot {
+		#imageName : '/Users/adithya/CSProjects/HenHacks2025/SmallTalk.image'
+	}
+}OmEntry {
+	#tags : {
+		#author : 'Unknown',
+		#time : DateAndTime [ '2025-03-02T00:48:38.813701-05:00' ],
+		#prior : OmReference [ '1' ],
+		#self : OmReference [ '2' ]
+	},
+	#content : EpMonticelloVersionsLoad {
+		#versionNames : OrderedCollection [
+			'BaselineOfNeoJSON-CompatibleUserName.1731917816'
+		]
+	}
+}OmEntry {
+	#tags : {
+		#author : 'Unknown',
+		#time : DateAndTime [ '2025-03-02T02:05:20.233785-05:00' ],
+		#prior : OmReference [ '2' ],
+		#self : OmReference [ '3' ]
+	},
+	#content : EpCategoryRegistration {
+		#classCategoryName : #Guild,
+		#affectedPackageName : #Guild
+	}
+}OmEntry {
+	#tags : {
+		#author : 'Unknown',
+		#time : DateAndTime [ '2025-03-02T02:06:34.444197-05:00' ],
+		#prior : OmReference [ '3' ],
+		#self : OmReference [ '4' ]
+	},
+	#content : EpCategoryAddition {
+		#classCategoryName : #Guild,
+		#affectedPackageName : #Guild
+	}
+}OmEntry {
+	#tags : {
+		#author : 'Unknown',
+		#time : DateAndTime [ '2025-03-02T02:06:34.446138-05:00' ],
+		#prior : OmReference [ '4' ],
+		#self : OmReference [ '5' ]
+	},
+	#content : EpClassAddition {
+		#class : RGClassDefinition {
+			#annotations : IdentityDictionary {
+				#definitionSource : 'Object subclass: #DBs\r\tinstanceVariableNames: \'\'\r\tclassVariableNames: \'\'\r\tpackage: \'Guild\'',
+				#traitCompositionSource : '{}',
+				#superclassName : 'Object'
+			},
+			#name : #DBs,
+			#methods : IdentityDictionary { },
+			#protocols : Set [ ],
+			#instanceVariables : OrderedCollection [ ],
+			#metaClass : RGMetaclassDefinition {
+				#annotations : IdentityDictionary {
+					#definitionSource : 'DBs class\r\tinstanceVariableNames: \'\'',
+					#traitCompositionSource : '{}'
+				},
+				#name : #'DBs class',
+				#methods : IdentityDictionary { },
+				#protocols : Set [ ],
+				#instanceVariables : OrderedCollection [ ],
+				#baseClass : @7
+			},
+			#comment : RGCommentDefinition {
+				#annotations : IdentityDictionary {
+					#isMetaSide : false,
+					#className : #DBs
+				},
+				#parent : @7,
+				#content : ''
+			},
+			#classVariables : OrderedCollection [ ],
+			#category : #Guild,
+			#package : #Guild,
+			#sharedPools : OrderedCollection [ ]
+		}
+	}
+}
