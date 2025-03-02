@@ -16,11 +16,15 @@ const MembersPage = () => {
     }
   };
 
+  const removeMember = (index) => {
+    setMembers(members.filter((_, i) => i !== index));
+  };
+
   return (
     <div className="members-page">
       <h1>Members Page</h1>
       <p>This is the members page of the Guild Management AI application.</p>
-      <button className="cool_button" style={{ marginBottom: "10px" }} onClick={addMember}>Add Member +</button>
+      <button className="add_member" style={{ marginBottom: "10px" }} onClick={addMember}>Add Member +</button>
       <table border="1">
         <thead>
           <tr>
@@ -28,7 +32,7 @@ const MembersPage = () => {
             <th>Age</th>
             <th>Role</th>
             <th>Tasks</th>
-            <th>Manage</th>
+            <th>Remove</th>
           </tr>
         </thead>
         <tbody>
@@ -38,7 +42,7 @@ const MembersPage = () => {
               <td>{member.age}</td>
               <td>{member.role}</td>
               <td>{member.tasks}</td>
-              <td><button>manage</button></td>
+              <td><button className='x_button' onClick={() => removeMember(index)}>X</button></td>
             </tr>
           ))}
         </tbody>

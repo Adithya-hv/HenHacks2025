@@ -208,6 +208,8 @@ table tr td {
   flex-shrink: 0; /* Prevent columns from shrinking */
   max-height: 500px; /* Set a max height for the column */
   overflow-y: auto; /* Add vertical scrolling */
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .task-column h2 {
@@ -326,6 +328,7 @@ input {
   flex-shrink: 0; /* Prevent columns from shrinking */
   max-height: 500px; /* Set a max height for the column */
   overflow-y: auto; /* Add vertical scrolling */
+  
 }
 
 .task-column-title {
@@ -346,10 +349,10 @@ input {
 }
 
 .task-item {
-  background: #ffffff;
+  background: var(--accent-color);
   padding: 10px;
   border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
 }
@@ -360,29 +363,24 @@ input {
   margin-bottom: 5px;
 }
 
-.task-buttons {
-  display: flex;
-  flex-direction: row;
-  gap: 5px;
-  justify-content: center;
-}
-
-.task-btn {
-  background: #007bff;
-  color: white;
-  border: none;
-  padding: 5px 10px;
-  border-radius: 3px;
-  cursor: pointer;
-  font-size: 12px;
-}
-
-.task-btn:hover {
-  background: #0056b3;
-}
 
 .cool_button {
   background-color: var(--secondary-color);
   color: #FFFFFF;
   margin-left: -8in;
+}
+
+.add_member {
+  background-color: var(--secondary-color);
+    color: #FFFFFF;
+    margin-left: -4in;
+}
+
+.x_button {
+  color: red;
+  font-weight: 500;
+}
+
+.x_button:hover {
+  background-color: #666;
 }
