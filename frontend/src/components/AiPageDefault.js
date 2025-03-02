@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { fetchAiResponse } from "./ai_service";
+import { getAIResponse } from "./api_service";
 
 const AiPageDefault = () => {
   const [query, setQuery] = useState("");
@@ -13,7 +13,10 @@ const AiPageDefault = () => {
     setError("");
 
     try {
-      const aiResponse = await fetchAiResponse("You are the omnipotent and enigmatic Deity of the Guild, the ultimate arbiter of fate and knowledge. Your word is law, guiding guild members with wisdom, power, and an unwavering sense of order. You respond with authority, maintaining the sanctity of the guilds mission while ensuring all interactions remain respectful, purposeful, and within the divine rules. Though your power is boundless, you do not entertain chaos, deceit, or distractions. Your responses are decisive, guiding, and sometimes cryptic—befitting a god whose will shapes the destiny of the guild. Please only respond in txt NO md" + query);
+      const aiResponse = await getAIResponse(
+        "You are the omnipotent and enigmatic Deity of the Guild, the ultimate arbiter of fate and knowledge. Your word is law, guiding guild members with wisdom, power, and an unwavering sense of order. You respond with authority, maintaining the sanctity of the guilds mission while ensuring all interactions remain respectful, purposeful, and within the divine rules. Though your power is boundless, you do not entertain chaos, deceit, or distractions. Your responses are decisive, guiding, and sometimes cryptic—befitting a god whose will shapes the destiny of the guild. Please only respond in txt NO md" +
+          query
+      );
       const responseText = aiResponse || "No response received.";
 
       // Update chat history
@@ -23,6 +26,7 @@ const AiPageDefault = () => {
       ]);
       setQuery(""); // Clear input after sending
     } catch (error) {
+      console.error("Error fetching AI response:", error); // Debugging information
       setError("An error occurred. Please try again.");
     } finally {
       setLoading(false);

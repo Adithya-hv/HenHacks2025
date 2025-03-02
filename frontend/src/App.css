@@ -1,20 +1,20 @@
 /* Import Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@400;700&family=Lora:wght@400;700&family=Roboto:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@400;700&family=Lora:wght@400;700&family=Roboto:wght@400;700&display=swap");
 
 /* Color Variables */
 :root {
-  --primary-color: #791B1C;
-  --secondary-color: #3D66B2;
-  --background-color: #FFF2E1;
-  --accent-color: #EAD7BD;
-  --text-color: #564C46;
-  --highlight-color: #E1332D;
+  --primary-color: #791b1c;
+  --secondary-color: #3d66b2;
+  --background-color: #fff2e1;
+  --accent-color: #ead7bd;
+  --text-color: #564c46;
+  --highlight-color: #e1332d;
 }
 
 /* General Styles */
 body {
   margin: 0;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   background-color: var(--background-color);
   color: var(--text-color);
   text-align: center;
@@ -29,8 +29,10 @@ main {
 }
 
 /* Headers */
-h1, h2, h3 {
-  font-family: 'Cinzel', serif;
+h1,
+h2,
+h3 {
+  font-family: "Cinzel", serif;
   font-weight: 700;
   color: var(--primary-color);
 }
@@ -44,14 +46,14 @@ h2 {
 }
 
 p {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 1.2rem;
   color: #666;
 }
 
 /* Buttons */
 button {
-  font-family: 'Lora', serif;
+  font-family: "Lora", serif;
   background: none;
   border: none;
   cursor: pointer;
@@ -82,7 +84,7 @@ nav ul {
 }
 
 nav ul li a {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 600;
   text-transform: uppercase;
   font-size: 1rem;
@@ -100,20 +102,25 @@ nav ul li a:hover {
 }
 
 /* Page Styles */
-.home-page, .members-page, .resources-page {
+.home-page,
+.members-page,
+.resources-page {
   text-align: center;
   padding: 2rem;
 }
 
-.home-page h1, .home-page p,
-.members-page h1, .members-page p,
-.resources-page h1, .resources-page p {
+.home-page h1,
+.home-page p,
+.members-page h1,
+.members-page p,
+.resources-page h1,
+.resources-page p {
   color: var(--primary-color);
 }
 
 /* Footer */
 footer {
-  font-family: 'Lora', serif;
+  font-family: "Lora", serif;
   font-size: 14px;
   text-align: center;
   padding: 20px;
@@ -144,7 +151,7 @@ li {
 
 /* Box Styles */
 .box {
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   color: var(--primary-color);
   display: inline-flex;
   flex-direction: column;
@@ -164,7 +171,7 @@ table {
   margin: auto;
   border-width: 10px;
   border-color: var(--primary-color);
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   border-radius: 15px;
 }
 
@@ -259,7 +266,7 @@ input {
   background-color: #f0f4f8;
   border-radius: 25px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 14px;
   color: #333;
   max-width: 70%;
@@ -284,19 +291,19 @@ input {
 }
 
 .chat-history {
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   max-width: 1000px;
   align-items: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 25px;
   padding: 20px 20px;
-  margin-left: 25px;
+  margin: 0 auto; /* Center horizontally */
   margin-bottom: 50px;
 }
 
 /* Tasks page */
 .tasks-page {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   background-color: var(--background-color);
   padding: 10px;
   display: flex;
@@ -328,7 +335,6 @@ input {
   flex-shrink: 0; /* Prevent columns from shrinking */
   max-height: 500px; /* Set a max height for the column */
   overflow-y: auto; /* Add vertical scrolling */
-  
 }
 
 .task-column-title {
@@ -344,7 +350,7 @@ input {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  max-height: 400px; 
+  max-height: 400px;
   overflow-y: auto;
 }
 
@@ -363,17 +369,16 @@ input {
   margin-bottom: 5px;
 }
 
-
 .cool_button {
   background-color: var(--secondary-color);
-  color: #FFFFFF;
+  color: #ffffff;
   margin-left: -8in;
 }
 
 .add_member {
   background-color: var(--secondary-color);
-    color: #FFFFFF;
-    margin-left: -4in;
+  color: #ffffff;
+  margin-left: -4in;
 }
 
 .x_button {
