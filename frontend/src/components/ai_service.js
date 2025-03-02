@@ -1,4 +1,4 @@
-const GEMINI_API_KEY = "API_KEY"; 
+const GEMINI_API_KEY = "AIzaSyBxgUfXacntHKe-O8L-i3vUBTaKphzZQVQ"; 
 const GEMINI_API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${GEMINI_API_KEY}`;
 
 export const generateAiPrompt = (query) => {
