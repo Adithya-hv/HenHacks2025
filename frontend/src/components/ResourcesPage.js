@@ -57,56 +57,56 @@ const ResourcesPage = () => {
             <td><img src={coinImage} alt="Coins" width="50" height="55" /></td>
             <td><input type="number" value={resources.coin.amount} onChange={(e) => handleChange(e, 'coin', 'amount')} /></td>
             <td>{resources.coin.price}</td>
-            <td></td>
+            <td>{resources.coin.amount * resources.coin.price}</td>
             <td>+0.5 ↑</td>
           </tr>
           <tr>
             <td><img src={ironImage} alt="Iron" width="50" height="55" /></td>
             <td><input type="number" value={resources.iron.amount} onChange={(e) => handleChange(e, 'iron', 'amount')} /></td>
             <td>{resources.iron.price}</td>
-            <td></td>
+            <td>{resources.iron.amount * resources.iron.price}</td>
             <td>+0.5 ↑</td>
           </tr>
           <tr>
             <td><img src={bronzeImage} alt="Bronze" width="50" height="50" /></td>
             <td><input type="number" value={resources.bronze.amount} onChange={(e) => handleChange(e, 'bronze', 'amount')} /></td>
             <td>{resources.bronze.price}</td>
-            <td></td>
+            <td>{resources.bronze.amount * resources.bronze.price}</td>
             <td>-1.2 ↓</td>
           </tr>
           <tr>
             <td><img src={goldImage} alt="Gold" width="45" height="45" /></td>
             <td><input type="number" value={resources.gold.amount} onChange={(e) => handleChange(e, 'gold', 'amount')} /></td>
             <td>{resources.gold.price}</td>
-            <td></td>
+            <td>{resources.gold.amount * resources.gold.price}</td>
             <td>+2.0 ↑</td>
           </tr>
           <tr>
             <td><img src={coalImage} alt="Coal" width="50" height="50" /></td>
             <td><input type="number" value={resources.coal.amount} onChange={(e) => handleChange(e, 'coal', 'amount')} /></td>
             <td>{resources.coal.price}</td>
-            <td></td>
+            <td>{resources.coal.amount * resources.coal.price}</td>
             <td>-0.3 ↓</td>
           </tr>
           <tr>
             <td><img src={cowImage} alt="Cow" width="50" height="50" /></td>
             <td><input type="number" value={resources.cow.amount} onChange={(e) => handleChange(e, 'cow', 'amount')} /></td>
             <td>{resources.cow.price}</td>
-            <td></td>
+            <td>{resources.cow.amount * resources.cow.price}</td>
             <td>+1.0 ↑</td>
           </tr>
           <tr>
             <td><img src={logImage} alt="Log" width="50" height="50" /></td>
             <td><input type="number" value={resources.log.amount} onChange={(e) => handleChange(e, 'log', 'amount')} /></td>
             <td>{resources.log.price}</td>
-            <td></td>
+            <td>{resources.log.amount * resources.log.price}</td>
             <td>-0.5 ↓</td>
           </tr>
           <tr>
             <td><img src={wheatImage} alt="Wheat" width="50" height="50" /></td>
             <td><input type="number" value={resources.wheat.amount} onChange={(e) => handleChange(e, 'wheat', 'amount')} /></td>
             <td>{resources.wheat.price}</td>
-            <td></td>
+            <td>{resources.wheat.amount * resources.wheat.price}</td>
             <td>+0.8 ↑</td>
           </tr>
         </tbody>
