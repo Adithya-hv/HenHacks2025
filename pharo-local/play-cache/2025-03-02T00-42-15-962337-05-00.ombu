@@ -1,0 +1,451 @@
+OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-02T00:48:37.981461-05:00' ],
+		#self : OmReference [ '6' ]
+	},
+	#content : 'Metacello new\r  repository: \'github://svenvc/NeoJSON/repository\';\r  baseline: \'NeoJSON\';\r  load.\r\t\r'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-02T00:48:56.808855-05:00' ],
+		#self : OmReference [ '7' ]
+	},
+	#content : '  dbFile := (Smalltalk imageDirectory / \'guilds.db\') fullName.\rconnection := SQLite3Connection on: dbFile.\rconnection open.\r"Table for guild resources"\rconnection execute: \'CREATE TABLE IF NOT EXISTS resources (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    amount INTEGER,\r    changePerDay INTEGER\r  );\'.\r\r"Table for guild members"\rconnection execute: \'CREATE TABLE IF NOT EXISTS members (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    role TEXT,\r    tasks TEXT\r  );\'.\r\rcursor := connection execute: \'SELECT * FROM resources;\'.\r\r\r\r\r\rTLWebserver teapot\r    GET: \'/api/resources\' -> [\r        | cursor rows |\r        \r        "Execute query"\r        cursor := connection execute: \'SELECT * FROM resources;\'.\r        \r    ]\r\t\r'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-02T00:49:07.541926-05:00' ],
+		#self : OmReference [ '8' ]
+	},
+	#content : '  dbFile := (Smalltalk imageDirectory / \'guilds.db\') fullName.\rconnection := SQLite3Connection on: dbFile.\rconnection open.\r"Table for guild resources"\rconnection execute: \'CREATE TABLE IF NOT EXISTS resources (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    amount INTEGER,\r    changePerDay INTEGER\r  );\'.\r\r"Table for guild members"\rconnection execute: \'CREATE TABLE IF NOT EXISTS members (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    role TEXT,\r    tasks TEXT\r  );\'.\r\rcursor := connection execute: \'SELECT * FROM resources;\'.\r\r\r\r\r\rTLWebserver teapot\r    GET: \'/api/resources\' -> [\r        | cursor columnNames rows json |\r        cursor := connection execute: \'SELECT * FROM resources;\'.\r        \r        "Get column names from the cursor"\r        columnNames := cursor columnNames.\r        \r        "Convert each row to a dictionary with column names as keys"\r        rows := cursor asArray collect: [ :row |\r            Dictionary withAssociations: (columnNames with: row collect: [ :col :val | col -> val ]) ].\r        \r        "Close the cursor to free resources"\r        cursor close.\r        \r        "Convert rows to JSON"\r        json := NeoJSONWriter toString: rows.\r        \r        "Return JSON response with appropriate content type"\r        ZnResponse ok: json contentType: \'application/json\'\r    ]\r\t\r'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-02T00:52:44.741773-05:00' ],
+		#self : OmReference [ '9' ]
+	},
+	#content : '  dbFile := (Smalltalk imageDirectory / \'guilds.db\') fullName.\rconnection := SQLite3Connection on: dbFile.\rconnection open.\r"Table for guild resources"\rconnection execute: \'CREATE TABLE IF NOT EXISTS resources (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    amount INTEGER,\r    changePerDay INTEGER\r  );\'.\r\r"Table for guild members"\rconnection execute: \'CREATE TABLE IF NOT EXISTS members (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    role TEXT,\r    tasks TEXT\r  );\'.\r\rcursor := connection execute: \'SELECT * FROM resources;\'.\r\r\r\r(connection execute: \'SELECT * FROM resources;\') asArray\r\r\rTLWebserver teapot\r    GET: \'/api/resources\' -> [\r        | cursor columnNames rows json |\r        cursor := connection execute: \'SELECT * FROM resources;\'.\r        \r        "Get column names from the cursor"\r        columnNames := cursor columnNames.\r        \r        "Convert each row to a dictionary with column names as keys"\r        rows := cursor asArray collect: [ :row |\r            Dictionary withAssociations: (columnNames with: row collect: [ :col :val | col -> val ]) ].\r        \r        "Close the cursor to free resources"\r        cursor close.\r        \r        "Convert rows to JSON"\r        json := NeoJSONWriter toString: rows.\r        \r        "Return JSON response with appropriate content type"\r        ZnResponse ok: json contentType: \'application/json\'\r    ]\r\t\r'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-02T00:52:52.135884-05:00' ],
+		#self : OmReference [ '10' ]
+	},
+	#content : '  dbFile := (Smalltalk imageDirectory / \'guilds.db\') fullName.\rconnection := SQLite3Connection on: dbFile.\rconnection open.\r"Table for guild resources"\rconnection execute: \'CREATE TABLE IF NOT EXISTS resources (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    amount INTEGER,\r    changePerDay INTEGER\r  );\'.\r\r"Table for guild members"\rconnection execute: \'CREATE TABLE IF NOT EXISTS members (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    role TEXT,\r    tasks TEXT\r  );\'.\r\rcursor := connection execute: \'SELECT * FROM resources;\'.\r\r\r\r(connection execute: \'SELECT * FROM resources;\') asArray.\r\r\rTLWebserver teapot\r    GET: \'/api/resources\' -> [\r        | cursor columnNames rows json |\r        cursor := connection execute: \'SELECT * FROM resources;\'.\r        \r        "Get column names from the cursor"\r        columnNames := cursor columnNames.\r        \r        "Convert each row to a dictionary with column names as keys"\r        rows := cursor asArray collect: [ :row |\r            Dictionary withAssociations: (columnNames with: row collect: [ :col :val | col -> val ]) ].\r        \r        "Close the cursor to free resources"\r        cursor close.\r        \r        "Convert rows to JSON"\r        json := NeoJSONWriter toString: rows.\r        \r        "Return JSON response with appropriate content type"\r        ZnResponse ok: json contentType: \'application/json\'\r    ]\r\t\r'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-02T00:56:16.67371-05:00' ],
+		#self : OmReference [ '11' ]
+	},
+	#content : '  dbFile := (Smalltalk imageDirectory / \'guilds.db\') fullName.\rconnection := SQLite3Connection on: dbFile.\rconnection open.\r"Table for guild resources"\rconnection execute: \'CREATE TABLE IF NOT EXISTS resources (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    amount INTEGER,\r    changePerDay INTEGER\r  );\'.\r\r"Table for guild members"\rconnection execute: \'CREATE TABLE IF NOT EXISTS members (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    role TEXT,\r    tasks TEXT\r  );\'.\r\rcursor := connection execute: \'SELECT * FROM resources;\'.\r\r\r\r(connection execute: \'SELECT * FROM resources;\') asArray.\r\r'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-02T00:56:23.353079-05:00' ],
+		#self : OmReference [ '12' ]
+	},
+	#content : '  dbFile := (Smalltalk imageDirectory / \'guilds.db\') fullName.\rconnection := SQLite3Connection on: dbFile.\rconnection open.\r"Table for guild resources"\rconnection execute: \'CREATE TABLE IF NOT EXISTS resources (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    amount INTEGER,\r    changePerDay INTEGER\r  );\'.\r\r"Table for guild members"\rconnection execute: \'CREATE TABLE IF NOT EXISTS members (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    role TEXT,\r    tasks TEXT\r  );\'.\r\rcursor := connection execute: \'SELECT * FROM resources;\'.\r\r\r\r(connection execute: \'SELECT * FROM resources;\') asArray\r\r'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-02T00:56:31.569972-05:00' ],
+		#self : OmReference [ '13' ]
+	},
+	#content : '  dbFile := (Smalltalk imageDirectory / \'guilds.db\') fullName.\rconnection := SQLite3Connection on: dbFile.\rconnection open.\r"Table for guild resources"\rconnection execute: \'CREATE TABLE IF NOT EXISTS resources (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    amount INTEGER,\r    changePerDay INTEGER\r  );\'.\r\r"Table for guild members"\rconnection execute: \'CREATE TABLE IF NOT EXISTS members (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    role TEXT,\r    tasks TEXT\r  );\'.\r\rcursor := connection execute: \'SELECT * FROM resources;\'.\r\r\r\rconnection execute: \'SELECT * FROM resources;\'\r\r'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-02T00:56:58.10722-05:00' ],
+		#self : OmReference [ '14' ]
+	},
+	#content : '  dbFile := (Smalltalk imageDirectory / \'guilds.db\') fullName.\rconnection := SQLite3Connection on: dbFile.\rconnection open.\r"Table for guild resources"\rconnection execute: \'CREATE TABLE IF NOT EXISTS resources (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    amount INTEGER,\r    changePerDay INTEGER\r  );\'.\r\r"Table for guild members"\rconnection execute: \'CREATE TABLE IF NOT EXISTS members (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    role TEXT,\r    tasks TEXT\r  );\'.\r\rcursor := connection execute: \'SELECT * FROM resources;\'.\r\rcursor next.\r\r'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-02T00:57:05.781285-05:00' ],
+		#self : OmReference [ '15' ]
+	},
+	#content : '  dbFile := (Smalltalk imageDirectory / \'guilds.db\') fullName.\rconnection := SQLite3Connection on: dbFile.\rconnection open.\r"Table for guild resources"\rconnection execute: \'CREATE TABLE IF NOT EXISTS resources (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    amount INTEGER,\r    changePerDay INTEGER\r  );\'.\r\r"Table for guild members"\rconnection execute: \'CREATE TABLE IF NOT EXISTS members (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    role TEXT,\r    tasks TEXT\r  );\'.\r\rcursor := connection execute: \'SELECT * FROM resources;\'.\r\r^cursor next.\r\r'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-02T00:57:20.422526-05:00' ],
+		#self : OmReference [ '16' ]
+	},
+	#content : '  dbFile := (Smalltalk imageDirectory / \'guilds.db\') fullName.\rconnection := SQLite3Connection on: dbFile.\rconnection open.\r"Table for guild resources"\rconnection execute: \'CREATE TABLE IF NOT EXISTS resources (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    amount INTEGER,\r    changePerDay INTEGER\r  );\'.\r\r"Table for guild members"\rconnection execute: \'CREATE TABLE IF NOT EXISTS members (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    role TEXT,\r    tasks TEXT\r  );\'.\r\rcursor := connection execute: \'SELECT * FROM resources;\'.\r\r^cursor next.\r^cursor rows.\r\r'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-02T00:57:27.91097-05:00' ],
+		#self : OmReference [ '17' ]
+	},
+	#content : '  dbFile := (Smalltalk imageDirectory / \'guilds.db\') fullName.\rconnection := SQLite3Connection on: dbFile.\rconnection open.\r"Table for guild resources"\rconnection execute: \'CREATE TABLE IF NOT EXISTS resources (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    amount INTEGER,\r    changePerDay INTEGER\r  );\'.\r\r"Table for guild members"\rconnection execute: \'CREATE TABLE IF NOT EXISTS members (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    role TEXT,\r    tasks TEXT\r  );\'.\r\rcursor := connection execute: \'SELECT * FROM resources;\'.\r\r^cursor rows.\r\r'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-02T00:59:06.744458-05:00' ],
+		#self : OmReference [ '18' ]
+	},
+	#content : '  dbFile := (Smalltalk imageDirectory / \'guilds.db\') fullName.\rconnection := SQLite3Connection on: dbFile.\rconnection open.\r"Table for guild resources"\rconnection execute: \'CREATE TABLE IF NOT EXISTS resources (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    amount INTEGER,\r    changePerDay INTEGER\r  );\'.\r\r"Table for guild members"\rconnection execute: \'CREATE TABLE IF NOT EXISTS members (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    role TEXT,\r    tasks TEXT\r  );\'.\r\rcursor := connection execute: \'SELECT * FROM resources;\'.\r\r^cursor rows.\r^cursor \r\r'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-02T00:59:34.252006-05:00' ],
+		#self : OmReference [ '19' ]
+	},
+	#content : '  dbFile := (Smalltalk imageDirectory / \'guilds.db\') fullName.\rconnection := SQLite3Connection on: dbFile.\rconnection open.\r"Table for guild resources"\rconnection execute: \'CREATE TABLE IF NOT EXISTS resources (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    amount INTEGER,\r    changePerDay INTEGER\r  );\'.\r\r"Table for guild members"\rconnection execute: \'CREATE TABLE IF NOT EXISTS members (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    role TEXT,\r    tasks TEXT\r  );\'.\r\rcursor := connection execute: \'SELECT * FROM resources;\'.\r\r^cursor next.\r \r\r'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-02T01:00:45.006415-05:00' ],
+		#self : OmReference [ '20' ]
+	},
+	#content : '  dbFile := (Smalltalk imageDirectory / \'guilds.db\') fullName.\rconnection := SQLite3Connection on: dbFile.\rconnection open.\r"Table for guild resources"\rconnection execute: \'CREATE TABLE IF NOT EXISTS resources (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    amount INTEGER,\r    changePerDay INTEGER\r  );\'.\r\r"Table for guild members"\rconnection execute: \'CREATE TABLE IF NOT EXISTS members (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    role TEXT,\r    tasks TEXT\r  );\'.\r\r\r\rTLWebserver teapot\r    GET: \'/api/resources\' -> [\r        | cursor answer |\r \r        cursor := connection execute: \'SELECT * FROM resources;\'.\r\t\t\t^cursor next.\r        \r    ]\r\r'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-02T01:02:05.443301-05:00' ],
+		#self : OmReference [ '21' ]
+	},
+	#content : '  dbFile := (Smalltalk imageDirectory / \'guilds.db\') fullName.\rconnection := SQLite3Connection on: dbFile.\rconnection open.\r"Table for guild resources"\rconnection execute: \'CREATE TABLE IF NOT EXISTS resources (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    amount INTEGER,\r    changePerDay INTEGER\r  );\'.\r\r"Table for guild members"\rconnection execute: \'CREATE TABLE IF NOT EXISTS members (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    role TEXT,\r    tasks TEXT\r  );\'.\r\r    cursor := connection execute: \'SELECT * FROM resources;\'.\r\t\t\t^cursor next.\r\r\r'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-02T01:03:07.056296-05:00' ],
+		#self : OmReference [ '22' ]
+	},
+	#content : '  dbFile := (Smalltalk imageDirectory / \'guilds.db\') fullName.\rconnection := SQLite3Connection on: dbFile.\rconnection open.\r"Table for guild resources"\rconnection execute: \'CREATE TABLE IF NOT EXISTS resources (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    amount INTEGER,\r    changePerDay INTEGER\r  );\'.\r\r"Table for guild members"\rconnection execute: \'CREATE TABLE IF NOT EXISTS members (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    role TEXT,\r    tasks TEXT\r  );\'.\r\r    cursor := connection execute: \'SELECT * FROM resources;\'.\r\routput := cursor next. \r\r^output toString \r\r\r'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-02T01:03:14.317818-05:00' ],
+		#self : OmReference [ '23' ]
+	},
+	#content : '  dbFile := (Smalltalk imageDirectory / \'guilds.db\') fullName.\rconnection := SQLite3Connection on: dbFile.\rconnection open.\r"Table for guild resources"\rconnection execute: \'CREATE TABLE IF NOT EXISTS resources (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    amount INTEGER,\r    changePerDay INTEGER\r  );\'.\r\r"Table for guild members"\rconnection execute: \'CREATE TABLE IF NOT EXISTS members (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    role TEXT,\r    tasks TEXT\r  );\'.\r\r    cursor := connection execute: \'SELECT * FROM resources;\'.\r\routput := cursor next. \r\r^output toString.\r\r\r'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-02T01:03:50.000507-05:00' ],
+		#self : OmReference [ '24' ]
+	},
+	#content : '  dbFile := (Smalltalk imageDirectory / \'guilds.db\') fullName.\rconnection := SQLite3Connection on: dbFile.\rconnection open.\r"Table for guild resources"\rconnection execute: \'CREATE TABLE IF NOT EXISTS resources (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    amount INTEGER,\r    changePerDay INTEGER\r  );\'.\r\r"Table for guild members"\rconnection execute: \'CREATE TABLE IF NOT EXISTS members (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    role TEXT,\r    tasks TEXT\r  );\'.\r\r    cursor := connection execute: \'SELECT * FROM resources;\'.\r\routput := cursor next. \r\r^output asArray.\r\r\r'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-02T01:04:23.045218-05:00' ],
+		#self : OmReference [ '25' ]
+	},
+	#content : '  dbFile := (Smalltalk imageDirectory / \'guilds.db\') fullName.\rconnection := SQLite3Connection on: dbFile.\rconnection open.\r"Table for guild resources"\rconnection execute: \'CREATE TABLE IF NOT EXISTS resources (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    amount INTEGER,\r    changePerDay INTEGER\r  );\'.\r\r"Table for guild members"\rconnection execute: \'CREATE TABLE IF NOT EXISTS members (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    role TEXT,\r    tasks TEXT\r  );\'.\r\r    cursor := connection execute: \'SELECT * FROM resources;\'.\r\routput := cursor next. \r\ra:=output asArray. \r\r^a asString36.\r\r\r'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-02T01:04:34.690016-05:00' ],
+		#self : OmReference [ '26' ]
+	},
+	#content : '  dbFile := (Smalltalk imageDirectory / \'guilds.db\') fullName.\rconnection := SQLite3Connection on: dbFile.\rconnection open.\r"Table for guild resources"\rconnection execute: \'CREATE TABLE IF NOT EXISTS resources (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    amount INTEGER,\r    changePerDay INTEGER\r  );\'.\r\r"Table for guild members"\rconnection execute: \'CREATE TABLE IF NOT EXISTS members (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    role TEXT,\r    tasks TEXT\r  );\'.\r\r    cursor := connection execute: \'SELECT * FROM resources;\'.\r\routput := cursor next. \r\ra:=output asArray. \r\r^a toString.\r\r\r'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-02T01:05:08.93363-05:00' ],
+		#self : OmReference [ '27' ]
+	},
+	#content : '  dbFile := (Smalltalk imageDirectory / \'guilds.db\') fullName.\rconnection := SQLite3Connection on: dbFile.\rconnection open.\r"Table for guild resources"\rconnection execute: \'CREATE TABLE IF NOT EXISTS resources (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    amount INTEGER,\r    changePerDay INTEGER\r  );\'.\r\r"Table for guild members"\rconnection execute: \'CREATE TABLE IF NOT EXISTS members (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    role TEXT,\r    tasks TEXT\r  );\'.\r\r    cursor := connection execute: \'SELECT * FROM resources;\'.\r\routput := cursor next. \r\ra:=output asArray. \r\rTLWebserver teapot\r    GET: \'/api/resources\' -> a\r\r\r'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-02T01:06:20.392128-05:00' ],
+		#self : OmReference [ '28' ]
+	},
+	#content : '  dbFile := (Smalltalk imageDirectory / \'guilds.db\') fullName.\rconnection := SQLite3Connection on: dbFile.\rconnection open.\r"Table for guild resources"\rconnection execute: \'CREATE TABLE IF NOT EXISTS resources (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    amount INTEGER,\r    changePerDay INTEGER\r  );\'.\r\r"Table for guild members"\rconnection execute: \'CREATE TABLE IF NOT EXISTS members (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    role TEXT,\r    tasks TEXT\r  );\'.\r\r    cursor := connection execute: \'SELECT * FROM resources;\'.\r\routput := cursor next. \r\ra:=output asArray. \r\r^a\r\r\r\r\r'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-02T01:08:46.754553-05:00' ],
+		#self : OmReference [ '29' ]
+	},
+	#content : '  dbFile := (Smalltalk imageDirectory / \'guilds.db\') fullName.\rconnection := SQLite3Connection on: dbFile.\rconnection open.\r"Table for guild resources"\rconnection execute: \'CREATE TABLE IF NOT EXISTS resources (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    amount INTEGER,\r    changePerDay INTEGER\r  );\'.\r\r"Table for guild members"\rconnection execute: \'CREATE TABLE IF NOT EXISTS members (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    role TEXT,\r    tasks TEXT\r  );\'.\r\r    cursor := connection execute: \'SELECT * FROM resources;\'.\r\routput := cursor next. \r\ra:=output asArray. \r\r^a printString \r\r\r\r\r'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-02T01:09:11.559983-05:00' ],
+		#self : OmReference [ '30' ]
+	},
+	#content : '  dbFile := (Smalltalk imageDirectory / \'guilds.db\') fullName.\rconnection := SQLite3Connection on: dbFile.\rconnection open.\r"Table for guild resources"\rconnection execute: \'CREATE TABLE IF NOT EXISTS resources (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    amount INTEGER,\r    changePerDay INTEGER\r  );\'.\r\r"Table for guild members"\rconnection execute: \'CREATE TABLE IF NOT EXISTS members (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    role TEXT,\r    tasks TEXT\r  );\'.\r\r    cursor := connection execute: \'SELECT * FROM resources;\'.\r\routput := cursor next. \r\ra:=output asArray. \r\r^a printString \r\r\rTLWebserver teapot\r    GET: \'/api/resources\' -> a printString \r\r\r'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-02T01:09:48.049564-05:00' ],
+		#self : OmReference [ '31' ]
+	},
+	#content : '  dbFile := (Smalltalk imageDirectory / \'guilds.db\') fullName.\rconnection := SQLite3Connection on: dbFile.\rconnection open.\r"Table for guild resources"\rconnection execute: \'CREATE TABLE IF NOT EXISTS resources (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    amount INTEGER,\r    changePerDay INTEGER\r  );\'.\r\r"Table for guild members"\rconnection execute: \'CREATE TABLE IF NOT EXISTS members (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    role TEXT,\r    tasks TEXT\r  );\'.\r\r    cursor := connection execute: \'SELECT * FROM resources;\'.\r\routput := cursor next. \r\ra:=output asArray. \r\rb:=a printString \r\r\rTLWebserver teapot\r    GET: \'/api/resources\' -> b\r\r\r'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-02T01:10:31.072008-05:00' ],
+		#self : OmReference [ '32' ]
+	},
+	#content : '  dbFile := (Smalltalk imageDirectory / \'guilds.db\') fullName.\rconnection := SQLite3Connection on: dbFile.\rconnection open.\r"Table for guild resources"\rconnection execute: \'CREATE TABLE IF NOT EXISTS resources (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    amount INTEGER,\r    changePerDay INTEGER\r  );\'.\r\r"Table for guild members"\rconnection execute: \'CREATE TABLE IF NOT EXISTS members (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    role TEXT,\r    tasks TEXT\r  );\'.\r\r    cursor := connection execute: \'SELECT * FROM resources;\'.\r\routput := cursor next. \r\ra:=output asArray. \r\rb := a printString.\r\r\rTLWebserver teapot\r    GET: \'/api/resources\' -> b\r\r\r'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-02T01:11:02.779058-05:00' ],
+		#self : OmReference [ '33' ]
+	},
+	#content : '  dbFile := (Smalltalk imageDirectory / \'guilds.db\') fullName.\rconnection := SQLite3Connection on: dbFile.\rconnection open.\r"Table for guild resources"\rconnection execute: \'CREATE TABLE IF NOT EXISTS resources (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    amount INTEGER,\r    changePerDay INTEGER\r  );\'.\r\r"Table for guild members"\rconnection execute: \'CREATE TABLE IF NOT EXISTS members (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    role TEXT,\r    tasks TEXT\r  );\'.\r\r    cursor := connection execute: \'SELECT * FROM resources;\'.\r\routput := cursor next. \r\ra:=output asArray. \r\rb := a printString.\r\r^b.\r\r\rTLWebserver teapot\r    GET: \'/api/resources\' -> b\r\r\r'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-02T01:11:08.852114-05:00' ],
+		#self : OmReference [ '34' ]
+	},
+	#content : '  dbFile := (Smalltalk imageDirectory / \'guilds.db\') fullName.\rconnection := SQLite3Connection on: dbFile.\rconnection open.\r"Table for guild resources"\rconnection execute: \'CREATE TABLE IF NOT EXISTS resources (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    amount INTEGER,\r    changePerDay INTEGER\r  );\'.\r\r"Table for guild members"\rconnection execute: \'CREATE TABLE IF NOT EXISTS members (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    role TEXT,\r    tasks TEXT\r  );\'.\r\r    cursor := connection execute: \'SELECT * FROM resources;\'.\r\routput := cursor next. \r\ra:=output asArray. \r\rb := a printString.\r\r^b.\r\r\r\r\r'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-02T01:11:37.666996-05:00' ],
+		#self : OmReference [ '35' ]
+	},
+	#content : '  dbFile := (Smalltalk imageDirectory / \'guilds.db\') fullName.\rconnection := SQLite3Connection on: dbFile.\rconnection open.\r"Table for guild resources"\rconnection execute: \'CREATE TABLE IF NOT EXISTS resources (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    amount INTEGER,\r    changePerDay INTEGER\r  );\'.\r\r"Table for guild members"\rconnection execute: \'CREATE TABLE IF NOT EXISTS members (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    role TEXT,\r    tasks TEXT\r  );\'.\r\r    cursor := connection execute: \'SELECT * FROM resources;\'.\r\routput := cursor next. \r\ra:=output asArray. \r\rb := a printString.\r\r\r\r\r\r\r'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-02T01:12:13.337581-05:00' ],
+		#self : OmReference [ '36' ]
+	},
+	#content : '  dbFile := (Smalltalk imageDirectory / \'guilds.db\') fullName.\rconnection := SQLite3Connection on: dbFile.\rconnection open.\r"Table for guild resources"\rconnection execute: \'CREATE TABLE IF NOT EXISTS resources (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    amount INTEGER,\r    changePerDay INTEGER\r  );\'.\r\r"Table for guild members"\rconnection execute: \'CREATE TABLE IF NOT EXISTS members (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    role TEXT,\r    tasks TEXT\r  );\'.\r\r    cursor := connection execute: \'SELECT * FROM resources;\'.\r\routput := cursor next. \r\ra:=output asArray. \r\rb := a printString.\r\rNeoJSONWriter toString: a\r\r\r\r\r'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-02T01:12:35.595906-05:00' ],
+		#self : OmReference [ '37' ]
+	},
+	#content : '  dbFile := (Smalltalk imageDirectory / \'guilds.db\') fullName.\rconnection := SQLite3Connection on: dbFile.\rconnection open.\r"Table for guild resources"\rconnection execute: \'CREATE TABLE IF NOT EXISTS resources (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    amount INTEGER,\r    changePerDay INTEGER\r  );\'.\r\r"Table for guild members"\rconnection execute: \'CREATE TABLE IF NOT EXISTS members (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    role TEXT,\r    tasks TEXT\r  );\'.\r\r    cursor := connection execute: \'SELECT * FROM resources;\'.\r\routput := cursor next. \r\ra:=output asArray. \r\rb := a printString.\r\rc := NeoJSONWriter toString: a.\r\r\rTLWebserver teapot\r    GET: \'/api/resources\' -> c\r\r\r\r\r'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-02T01:12:54.607119-05:00' ],
+		#self : OmReference [ '38' ]
+	},
+	#content : '  dbFile := (Smalltalk imageDirectory / \'guilds.db\') fullName.\rconnection := SQLite3Connection on: dbFile.\rconnection open.\r"Table for guild resources"\rconnection execute: \'CREATE TABLE IF NOT EXISTS resources (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    amount INTEGER,\r    changePerDay INTEGER\r  );\'.\r\r"Table for guild members"\rconnection execute: \'CREATE TABLE IF NOT EXISTS members (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    role TEXT,\r    tasks TEXT\r  );\'.\r\r    cursor := connection execute: \'SELECT * FROM resources;\'.\r\routput := cursor next. \r\ra:=output asArray. \r\rb := a printString.\r\rc := NeoJSONWriter toString: a.\r\r^c\r\r\r\r\r'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-02T01:13:14.291987-05:00' ],
+		#self : OmReference [ '39' ]
+	},
+	#content : '  dbFile := (Smalltalk imageDirectory / \'guilds.db\') fullName.\rconnection := SQLite3Connection on: dbFile.\rconnection open.\r"Table for guild resources"\rconnection execute: \'CREATE TABLE IF NOT EXISTS resources (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    amount INTEGER,\r    changePerDay INTEGER\r  );\'.\r\r"Table for guild members"\rconnection execute: \'CREATE TABLE IF NOT EXISTS members (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    role TEXT,\r    tasks TEXT\r  );\'.\r\r    cursor := connection execute: \'SELECT * FROM resources;\'.\r\routput := cursor next. \r\ra:=output asArray. \r\rb := a printString.\r\rc := NeoJSONWriter toString: b.\r\r^c\r\r\r\r\r'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-02T01:13:30.72099-05:00' ],
+		#self : OmReference [ '40' ]
+	},
+	#content : '  dbFile := (Smalltalk imageDirectory / \'guilds.db\') fullName.\rconnection := SQLite3Connection on: dbFile.\rconnection open.\r"Table for guild resources"\rconnection execute: \'CREATE TABLE IF NOT EXISTS resources (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    amount INTEGER,\r    changePerDay INTEGER\r  );\'.\r\r"Table for guild members"\rconnection execute: \'CREATE TABLE IF NOT EXISTS members (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    role TEXT,\r    tasks TEXT\r  );\'.\r\r    cursor := connection execute: \'SELECT * FROM resources;\'.\r\routput := cursor next. \r\ra:=output asArray. \r\rb := a printString.\r\rc := NeoJSONWriter toString: b.\r\r\rTLWebserver teapot\r    GET: \'/api/resources\' -> c\r\r\r\r\r'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-02T01:14:06.332795-05:00' ],
+		#self : OmReference [ '41' ]
+	},
+	#content : '  dbFile := (Smalltalk imageDirectory / \'guilds.db\') fullName.\rconnection := SQLite3Connection on: dbFile.\rconnection open.\r"Table for guild resources"\rconnection execute: \'CREATE TABLE IF NOT EXISTS resources (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    amount INTEGER,\r    changePerDay INTEGER\r  );\'.\r\r"Table for guild members"\rconnection execute: \'CREATE TABLE IF NOT EXISTS members (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    role TEXT,\r    tasks TEXT\r  );\'.\r\r    cursor := connection execute: \'SELECT * FROM resources;\'.\r\routput := cursor next. \r\ra:=output asArray. \r\rb := a printString.\r\rc := NeoJSONWriter toString: b.\r\rTLWebserver teapot\r    GET: \'/api/resources\' -> c\r\r\r\r\r'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-02T01:15:40.18739-05:00' ],
+		#self : OmReference [ '42' ]
+	},
+	#content : '  dbFile := (Smalltalk imageDirectory / \'guilds.db\') fullName.\rconnection := SQLite3Connection on: dbFile.\rconnection open.\r"Table for guild resources"\rconnection execute: \'CREATE TABLE IF NOT EXISTS resources (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    amount INTEGER,\r    changePerDay INTEGER\r  );\'.\r\r"Table for guild members"\rconnection execute: \'CREATE TABLE IF NOT EXISTS members (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    role TEXT,\r    tasks TEXT\r  );\'.\r\r    cursor := connection execute: \'SELECT * FROM resources;\'.\r\routput := cursor next. \r\ra:=output asArray. \r\rb := a printString.\r\rc := NeoJSONWriter toString: b.\r\r\rTLWebserver teapot\r    GET: \'/api/resources\' -> #c\r\r\r\r\r'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-02T01:15:58.756789-05:00' ],
+		#self : OmReference [ '43' ]
+	},
+	#content : '  dbFile := (Smalltalk imageDirectory / \'guilds.db\') fullName.\rconnection := SQLite3Connection on: dbFile.\rconnection open.\r"Table for guild resources"\rconnection execute: \'CREATE TABLE IF NOT EXISTS resources (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    amount INTEGER,\r    changePerDay INTEGER\r  );\'.\r\r"Table for guild members"\rconnection execute: \'CREATE TABLE IF NOT EXISTS members (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    role TEXT,\r    tasks TEXT\r  );\'.\r\r    cursor := connection execute: \'SELECT * FROM resources;\'.\r\routput := cursor next. \r\ra:=output asArray. \r\rb := a printString.\r\rc := NeoJSONWriter toString: b.\r\r\rTLWebserver teapot\r    GET: \'/api/resources\' -> c\r\r\r\r\r'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-02T01:18:21.290052-05:00' ],
+		#self : OmReference [ '44' ]
+	},
+	#content : '  dbFile := (Smalltalk imageDirectory / \'guilds.db\') fullName.\rconnection := SQLite3Connection on: dbFile.\rconnection open.\r"Table for guild resources"\rconnection execute: \'CREATE TABLE IF NOT EXISTS resources (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    amount INTEGER,\r    changePerDay INTEGER\r  );\'.\r\r"Table for guild members"\rconnection execute: \'CREATE TABLE IF NOT EXISTS members (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    role TEXT,\r    tasks TEXT\r  );\'.\r\r    cursor := connection execute: \'SELECT * FROM resources;\'.\r\r    rows := cursor asArray collect: [ :row | \r            Dictionary \r                with: \'id\' -> row at: 1\r                with: \'name\' -> (row at: 2)\r                with: \'amount\' -> (row at: 3)\r                with: \'changePerDay\' -> (row at: 4) ].\r       \r\r\rTLWebserver teapot\r    GET: \'/api/resources\' -> c\r\r\r\r\r'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-02T01:18:31.669652-05:00' ],
+		#self : OmReference [ '45' ]
+	},
+	#content : '  dbFile := (Smalltalk imageDirectory / \'guilds.db\') fullName.\rconnection := SQLite3Connection on: dbFile.\rconnection open.\r"Table for guild resources"\rconnection execute: \'CREATE TABLE IF NOT EXISTS resources (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    amount INTEGER,\r    changePerDay INTEGER\r  );\'.\r\r"Table for guild members"\rconnection execute: \'CREATE TABLE IF NOT EXISTS members (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    role TEXT,\r    tasks TEXT\r  );\'.\r\r    cursor := connection execute: \'SELECT * FROM resources;\'.\r\r    rows := cursor asArray. collect: [ :row | \r            Dictionary \r                with: \'id\' -> row at: 1\r                with: \'name\' -> (row at: 2)\r                with: \'amount\' -> (row at: 3)\r                with: \'changePerDay\' -> (row at: 4) ].\r       \r\r\rTLWebserver teapot\r    GET: \'/api/resources\' -> c\r\r\r\r\r'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-02T01:18:41.476401-05:00' ],
+		#self : OmReference [ '46' ]
+	},
+	#content : '  dbFile := (Smalltalk imageDirectory / \'guilds.db\') fullName.\rconnection := SQLite3Connection on: dbFile.\rconnection open.\r"Table for guild resources"\rconnection execute: \'CREATE TABLE IF NOT EXISTS resources (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    amount INTEGER,\r    changePerDay INTEGER\r  );\'.\r\r"Table for guild members"\rconnection execute: \'CREATE TABLE IF NOT EXISTS members (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    role TEXT,\r    tasks TEXT\r  );\'.\r\r    cursor := connection execute: \'SELECT * FROM resources;\'.\r\r    rows := cursor asArray. \rcollect: [ :row | \r            Dictionary \r                with: \'id\' -> row at: 1\r                with: \'name\' -> (row at: 2)\r                with: \'amount\' -> (row at: 3)\r                with: \'changePerDay\' -> (row at: 4) ].\r       \r\r\rTLWebserver teapot\r    GET: \'/api/resources\' -> c\r\r\r\r\r'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-02T01:18:53.996409-05:00' ],
+		#self : OmReference [ '47' ]
+	},
+	#content : '  dbFile := (Smalltalk imageDirectory / \'guilds.db\') fullName.\rconnection := SQLite3Connection on: dbFile.\rconnection open.\r"Table for guild resources"\rconnection execute: \'CREATE TABLE IF NOT EXISTS resources (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    amount INTEGER,\r    changePerDay INTEGER\r  );\'.\r\r"Table for guild members"\rconnection execute: \'CREATE TABLE IF NOT EXISTS members (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    role TEXT,\r    tasks TEXT\r  );\'.\r\r    cursor := connection execute: \'SELECT * FROM resources;\'.\r\r    rows := cursor asArray. \rcollect: [ :row | \r            Dictionary \r                 \'id\' -> row at: 1\r                name\' -> (row at: 2)\r                \'amount\' -> (row at: 3)\r                with: \'changePerDay\' -> (row at: 4) ].\r       \r\r\rTLWebserver teapot\r    GET: \'/api/resources\' -> c\r\r\r\r\r'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-02T01:18:58.814508-05:00' ],
+		#self : OmReference [ '48' ]
+	},
+	#content : '  dbFile := (Smalltalk imageDirectory / \'guilds.db\') fullName.\rconnection := SQLite3Connection on: dbFile.\rconnection open.\r"Table for guild resources"\rconnection execute: \'CREATE TABLE IF NOT EXISTS resources (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    amount INTEGER,\r    changePerDay INTEGER\r  );\'.\r\r"Table for guild members"\rconnection execute: \'CREATE TABLE IF NOT EXISTS members (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    role TEXT,\r    tasks TEXT\r  );\'.\r\r    cursor := connection execute: \'SELECT * FROM resources;\'.\r\r    rows := cursor asArray. \rcollect: [ :row | \r            Dictionary \r                 \'id\' -> row at: 1\r                name\' -> (row at: 2)\r                \'amount\' -> (row at: 3)\r                \'changePerDay\' -> (row at: 4) ].\r       \r\r\rTLWebserver teapot\r    GET: \'/api/resources\' -> c\r\r\r\r\r'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-02T01:22:43.72961-05:00' ],
+		#self : OmReference [ '49' ]
+	},
+	#content : '  dbFile := (Smalltalk imageDirectory / \'guilds.db\') fullName.\rconnection := SQLite3Connection on: dbFile.\rconnection open.\r"Table for guild resources"\rconnection execute: \'CREATE TABLE IF NOT EXISTS resources (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    amount INTEGER,\r    changePerDay INTEGER\r  );\'.\r\r"Table for guild members"\rconnection execute: \'CREATE TABLE IF NOT EXISTS members (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    role TEXT,\r    tasks TEXT\r  );\'.\r\r    cursor := connection execute: \'SELECT * FROM resources;\'.\r\routput := cursor next. \r\ra:=output asArray. \r\rb := a printString.\r\rc := NeoJSONWriter toString: b.\r\rTLWebserver teapot\r    GET: \'/api/resources\' -> c'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-02T01:24:50.712871-05:00' ],
+		#self : OmReference [ '50' ]
+	},
+	#content : '  dbFile := (Smalltalk imageDirectory / \'guilds.db\') fullName.\rconnection := SQLite3Connection on: dbFile.\rconnection open.\r"Table for guild resources"\rconnection execute: \'CREATE TABLE IF NOT EXISTS resources (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    amount INTEGER,\r    changePerDay INTEGER\r  );\'.\r\r"Table for guild members"\rconnection execute: \'CREATE TABLE IF NOT EXISTS members (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    role TEXT,\r    tasks TEXT\r  );\'.\r\r    cursor := connection execute: \'SELECT * FROM resources;\'.\r\routput := cursor next. \r\ra:=output asArray. \r\rb := a printString.\r\rc := NeoJSONWriter toString: b.\r\rTLWebserver teapot\r    GET: \'/api/resources\' -> [ cursor do: [ :row |  ] ]'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-02T01:28:45.872621-05:00' ],
+		#self : OmReference [ '51' ]
+	},
+	#content : '  dbFile := (Smalltalk imageDirectory / \'guilds.db\') fullName.\rconnection := SQLite3Connection on: dbFile.\rconnection open.\r"Table for guild resources"\rconnection execute: \'CREATE TABLE IF NOT EXISTS resources (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    amount INTEGER,\r    changePerDay INTEGER\r  );\'.\r\r"Table for guild members"\rconnection execute: \'CREATE TABLE IF NOT EXISTS members (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    role TEXT,\r    tasks TEXT\r  );\'.\r\r    cursor := connection execute: \'SELECT * FROM resources;\'.\r\routput := cursor next. \r\ra:=output asArray. \r\rb := a printString.\r\rc := NeoJSONWriter toString: b.\r\rTLWebserver teapot\r    GET: \'/api/resources\' -> c'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-02T01:31:04.555408-05:00' ],
+		#self : OmReference [ '52' ]
+	},
+	#content : 'dbFile := (Smalltalk imageDirectory / \'guilds.db\') fullName.\rconnection := SQLite3Connection on: dbFile.\rconnection open.\r\r"Table for guild resources"\rconnection execute: \'CREATE TABLE IF NOT EXISTS resources (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    amount INTEGER,\r    changePerDay INTEGER\r  );\'.\r"Table for guild members"\rconnection execute: \'CREATE TABLE IF NOT EXISTS members (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    role TEXT,\r    tasks TEXT\r  );\'.\r\rcursor := connection execute: \'SELECT * FROM resources;\'.\rresults := OrderedCollection new.\r[cursor hasNext] whileTrue: [\r    results add: cursor next asDictionary\r].\rcursor close.\r\rjsonResponse := NeoJSONWriter toString: results.\r\rTLWebserver teapot\r    GET: \'/api/resources\' -> jsonResponse'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-02T01:31:11.796773-05:00' ],
+		#self : OmReference [ '53' ]
+	},
+	#content : 'dbFile := (Smalltalk imageDirectory / \'guilds.db\') fullName.\rconnection := SQLite3Connection on: dbFile.\rconnection open.\r\r"Table for guild resources"\rconnection execute: \'CREATE TABLE IF NOT EXISTS resources (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    amount INTEGER,\r    changePerDay INTEGER\r  );\'.\r"Table for guild members"\rconnection execute: \'CREATE TABLE IF NOT EXISTS members (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    role TEXT,\r    tasks TEXT\r  );\'.\r\rcursor := connection execute: \'SELECT * FROM resources;\'.\rresults := OrderedCollection new.\r[cursor hasNext.] whileTrue: [\r    results add: cursor next asDictionary\r].\rcursor close.\r\rjsonResponse := NeoJSONWriter toString: results.\r\rTLWebserver teapot\r    GET: \'/api/resources\' -> jsonResponse'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-02T01:31:32.182708-05:00' ],
+		#self : OmReference [ '54' ]
+	},
+	#content : 'dbFile := (Smalltalk imageDirectory / \'guilds.db\') fullName.\rconnection := SQLite3Connection on: dbFile.\rconnection open.\r\r"Table for guild resources"\rconnection execute: \'CREATE TABLE IF NOT EXISTS resources (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    amount INTEGER,\r    changePerDay INTEGER\r  );\'.\r"Table for guild members"\rconnection execute: \'CREATE TABLE IF NOT EXISTS members (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    role TEXT,\r    tasks TEXT\r  );\'.\r\rcursor := connection execute: \'SELECT * FROM resources;\'.\rresults := OrderedCollection new.\r[cursor next.] whileTrue: [\r    results add: cursor next asDictionary\r].\rcursor close.\r\rjsonResponse := NeoJSONWriter toString: results.\r\rTLWebserver teapot\r    GET: \'/api/resources\' -> jsonResponse'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-02T01:31:51.608972-05:00' ],
+		#self : OmReference [ '55' ]
+	},
+	#content : 'dbFile := (Smalltalk imageDirectory / \'guilds.db\') fullName.\rconnection := SQLite3Connection on: dbFile.\rconnection open.\r\r"Table for guild resources"\rconnection execute: \'CREATE TABLE IF NOT EXISTS resources (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    amount INTEGER,\r    changePerDay INTEGER\r  );\'.\r"Table for guild members"\rconnection execute: \'CREATE TABLE IF NOT EXISTS members (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    role TEXT,\r    tasks TEXT\r  );\'.\r\rcursor := connection execute: \'SELECT * FROM resources;\'.\rresults := OrderedCollection new.\r[cursor hasNext ] whileTrue: [\r    results add: cursor next asDictionary\r].\rcursor close.\r\rjsonResponse := NeoJSONWriter toString: results.\r\rTLWebserver teapot\r    GET: \'/api/resources\' -> jsonResponse'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-02T01:33:21.584497-05:00' ],
+		#self : OmReference [ '56' ]
+	},
+	#content : 'dbFile := (Smalltalk imageDirectory / \'guilds.db\') fullName.\rconnection := SQLite3Connection on: dbFile.\rconnection open.\r\r"Table for guild resources"\rconnection execute: \'CREATE TABLE IF NOT EXISTS resources (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    amount INTEGER,\r    changePerDay INTEGER\r  );\'.\r"Table for guild members"\rconnection execute: \'CREATE TABLE IF NOT EXISTS members (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    role TEXT,\r    tasks TEXT\r  );\'.\r\rcursor := connection execute: \'SELECT * FROM resources;\'.\rresults := OrderedCollection new.\rrow := cursor next.\r[row notNil] whileTrue: [\r    results add: row asDictionary.\r    row := cursor next.\r].\r\rjsonResponse := NeoJSONWriter toString: results.\r\rTLWebserver teapot\r    GET: \'/api/resources\' -> jsonResponse'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-02T01:33:48.95319-05:00' ],
+		#self : OmReference [ '57' ]
+	},
+	#content : 'dbFile := (Smalltalk imageDirectory / \'guilds.db\') fullName.\rconnection := SQLite3Connection on: dbFile.\rconnection open.\r\r"Table for guild resources"\rconnection execute: \'CREATE TABLE IF NOT EXISTS resources (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    amount INTEGER,\r    changePerDay INTEGER\r  );\'.\r"Table for guild members"\rconnection execute: \'CREATE TABLE IF NOT EXISTS members (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    role TEXT,\r    tasks TEXT\r  );\'.\r\rcursor := connection execute: \'SELECT * FROM resources;\'.\rresults := OrderedCollection new.\rrow := cursor next.\r[row notNil] whileTrue: [\r    results add: row asDictionary.\r    row := cursor next.\r].\r\rjsonResponse := NeoJSONWriter toString: results.\r\r^jsonResponse \r'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-02T01:34:09.647475-05:00' ],
+		#self : OmReference [ '58' ]
+	},
+	#content : 'dbFile := (Smalltalk imageDirectory / \'guilds.db\') fullName.\rconnection := SQLite3Connection on: dbFile.\rconnection open.\r\r"Table for guild resources"\rconnection execute: \'CREATE TABLE IF NOT EXISTS resources (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    amount INTEGER,\r    changePerDay INTEGER\r  );\'.\r"Table for guild members"\rconnection execute: \'CREATE TABLE IF NOT EXISTS members (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    role TEXT,\r    tasks TEXT\r  );\'.\r\rcursor := connection execute: \'SELECT * FROM resources;\'.\rresults := OrderedCollection new.\rrow := cursor next.\r[row notNil] whileTrue: [\r    results add: row asDictionary.\r    row := cursor next.\r].\r\rjsonResponse := NeoJSONWriter toString: results.\r\rTLWebserver teapot\r    GET: \'/api/resources\' -> jsonResponse'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-02T01:41:24.665111-05:00' ],
+		#self : OmReference [ '59' ]
+	},
+	#content : 'dbFile := (Smalltalk imageDirectory / \'guilds.db\') fullName.\rconnection := SQLite3Connection on: dbFile.\rconnection open.\r\r"Table for guild resources"\rconnection execute: \'CREATE TABLE IF NOT EXISTS resources (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    amount INTEGER,\r    changePerDay INTEGER\r  );\'.\r"Table for guild members"\rconnection execute: \'CREATE TABLE IF NOT EXISTS members (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    role TEXT,\r    tasks TEXT\r  );\'.\r\rcursor := connection execute: \'SELECT * FROM resources;\'.\rresults := OrderedCollection new.\rrow := cursor next.\r[row notNil] whileTrue: [\r    results add: row asDictionary.\r    row := cursor next.\r].\r\rjsonResponse := NeoJSONWriter toString: results.\r\rTLWebserver teapot\r    GET: \'/api/resources\' -> jsonResponse\r'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-02T01:44:23.428502-05:00' ],
+		#self : OmReference [ '60' ]
+	},
+	#content : 'dbFile := (Smalltalk imageDirectory / \'guilds.db\') fullName.\rconnection := SQLite3Connection on: dbFile.\rconnection open.\r\r"Table for guild resources"\rconnection execute: \'CREATE TABLE IF NOT EXISTS resources (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    amount INTEGER,\r    changePerDay INTEGER\r  );\'.\r"Table for guild members"\rconnection execute: \'CREATE TABLE IF NOT EXISTS members (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    role TEXT,\r    tasks TEXT\r  );\'.\r\r"Get all data as a simple string"\rresult := String new writeStream.\rcursor := connection execute: \'SELECT * FROM resources;\'.\rrow := cursor next.\r[row notNil] whileTrue: [\r    result nextPutAll: row asString.\r    result cr.\r    row := cursor next.\r].\rstringResult := result contents.\r\rTLWebserver teapot\r    GET: \'/api/resources\' -> stringResult'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-02T01:44:38.616763-05:00' ],
+		#self : OmReference [ '61' ]
+	},
+	#content : 'dbFile := (Smalltalk imageDirectory / \'guilds.db\') fullName.\rconnection := SQLite3Connection on: dbFile.\rconnection open.\r\r"Tables creation code here..."\r\r"Just convert the first row to string"\rcursor := connection execute: \'SELECT * FROM resources;\'.\rrow := cursor next.\rstringResult := row \r    ifNil: [\'No data found\'] \r    ifNotNil: [row asString].\r\rTLWebserver teapot\r    GET: \'/api/resources\' -> stringResult'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-02T01:45:24.357711-05:00' ],
+		#self : OmReference [ '62' ]
+	},
+	#content : 'dbFile := (Smalltalk imageDirectory / \'guilds.db\') fullName.\rconnection := SQLite3Connection on: dbFile.\rconnection open.\r\r"Tables creation code here..."\r\rresult := String new writeStream.\rresult nextPutAll: \'Resources data: \'.\r\rcursor := connection execute: \'SELECT * FROM resources;\'.\rrow := cursor next.\rresult nextPutAll: row printString.\rresult contents.\r\rTLWebserver teapot\r    GET: \'/api/resources\' -> result contents'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-02T01:50:13.825812-05:00' ],
+		#self : OmReference [ '63' ]
+	},
+	#content : '"Create collections to store data"\rresources := OrderedCollection new.\rresources add: (Dictionary newFrom: {\'name\' -> \'Gold\'. \'amount\' -> 100}).\rresources add: (Dictionary newFrom: {\'name\' -> \'Wood\'. \'amount\' -> 200}).\r\rmembers := OrderedCollection new.\rmembers add: (Dictionary newFrom: {\'name\' -> \'John\'. \'role\' -> \'Leader\'}).\rmembers add: (Dictionary newFrom: {\'name\' -> \'Lisa\'. \'role\' -> \'Member\'}).\r\r"Create server with routes using the collections"\rserver := Teapot configure: { #port -> 8080. #debugMode -> true }.\r\rserver\r    GET: \'/api/resources\' -> (String streamContents: [:s | \r        STON writer \r            on: s; \r            nextPut: resources]);\r    GET: \'/api/members\' -> (String streamContents: [:s | \r        STON writer \r            on: s; \r            nextPut: members]);\r    start.'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-02T01:52:57.164618-05:00' ],
+		#self : OmReference [ '64' ]
+	},
+	#content : '"Create collections to store data"\rresources := OrderedCollection new.\rresources add: (Dictionary newFrom: {\'name\' -> \'Gold\'. \'amount\' -> 100}).\rresources add: (Dictionary newFrom: {\'name\' -> \'Wood\'. \'amount\' -> 200}).\r\rmembers := OrderedCollection new.\rmembers add: (Dictionary newFrom: {\'name\' -> \'John\'. \'role\' -> \'Leader\'}).\rmembers add: (Dictionary newFrom: {\'name\' -> \'Lisa\'. \'role\' -> \'Member\'}).\r\r"Create server with routes including GET, POST and PUT"\rserver := Teapot configure: { #port -> 8080. #debugMode -> true }.\r\rserver\r    "GET endpoints"\r    GET: \'/api/resources\' -> (String streamContents: [:s | \r        STON writer \r            on: s; \r            nextPut: resources]);\r    GET: \'/api/members\' -> (String streamContents: [:s | \r        STON writer \r            on: s; \r            nextPut: members]);\r            \r    "POST endpoints to add new items"\r    POST: \'/api/resources\' -> [:request | \r        | newResource |\r        newResource := STON fromString: request entity string.\r        resources add: newResource.\r        \'Resource added successfully\' ];\r        \r    POST: \'/api/members\' -> [:request | \r        | newMember |\r        newMember := STON fromString: request entity string.\r        members add: newMember.\r        \'Member added successfully\' ];\r        \r    "PUT endpoints to update existing items"\r    PUT: \'/api/resources/:name\' -> [:request | \r        | resourceName updatedData resourceToUpdate |\r        resourceName := request at: #name.\r        updatedData := STON fromString: request entity string.\r        \r        resourceToUpdate := resources detect: [:each | (each at: \'name\') = resourceName] ifNone: [nil].\r        resourceToUpdate \r            ifNil: [\'Resource not found\']\r            ifNotNil: [\r                resources remove: resourceToUpdate.\r                resources add: updatedData.\r                \'Resource updated successfully\'].\r        ];\r        \r    PUT: \'/api/members/:name\' -> [:request | \r        | memberName updatedData memberToUpdate |\r        memberName := request at: #name.\r        updatedData := STON fromString: request entity string.\r        \r        memberToUpdate := members detect: [:each | (each at: \'name\') = memberName] ifNone: [nil].\r        memberToUpdate \r            ifNil: [\'Member not found\']\r            ifNotNil: [\r                members remove: memberToUpdate.\r                members add: updatedData.\r                \'Member updated successfully\'].\r        ];\r    \r    start.'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-02T01:58:08.677802-05:00' ],
+		#self : OmReference [ '65' ]
+	},
+	#content : '"Create collections to store data"\rresources := OrderedCollection new.\rresources add: (Dictionary newFrom: {\'name\' -> \'Gold\'. \'amount\' -> 100}).\rresources add: (Dictionary newFrom: {\'name\' -> \'Wood\'. \'amount\' -> 200}).\r\rmembers := OrderedCollection new.\rmembers add: (Dictionary newFrom: {\'name\' -> \'John\'. \'role\' -> \'Leader\'}).\rmembers add: (Dictionary newFrom: {\'name\' -> \'Lisa\'. \'role\' -> \'Member\'}).\r\r"Create server with routes including GET, POST and PUT"\rserver := Teapot configure: { #port -> 8080. #debugMode -> true }.\r\rserver\r    "GET endpoints"\r    GET: \'/api/resources\' -> (String streamContents: [:s | \r        STON writer \r            on: s; \r            nextPut: resources]);\r    GET: \'/api/members\' -> (String streamContents: [:s | \r        STON writer \r            on: s; \r            nextPut: members]);\r            \r    "POST endpoints to add new items"\r    POST: \'/api/resources\' -> [:request | \r        | newResource |\r        newResource := STON fromString: request entity string.\r        resources add: newResource.\r        TeaResponse ok body: \'Resource added successfully\' ];\r        \r    POST: \'/api/members\' -> [:request | \r        | newMember |\r        newMember := STON fromString: request entity string.\r        members add: newMember.\r        TeaResponse ok body: \'Member added successfully\' ];\r        \r    "PUT endpoints to update existing items"\r    PUT: \'/api/resources/:name\' -> [:request | \r        | resourceName updatedData resourceToUpdate |\r        resourceName := request at: #name.\r        updatedData := STON fromString: request entity string.\r        \r        resourceToUpdate := resources detect: [:each | (each at: \'name\') = resourceName] ifNone: [nil].\r        resourceToUpdate \r            ifNil: [TeaResponse notFound body: \'Resource not found\']\r            ifNotNil: [\r                resources remove: resourceToUpdate.\r                resources add: updatedData.\r                TeaResponse ok body: \'Resource updated successfully\'].\r        ];\r        \r    PUT: \'/api/members/:name\' -> [:request | \r        | memberName updatedData memberToUpdate |\r        memberName := request at: #name.\r        updatedData := STON fromString: request entity string.\r        \r        memberToUpdate := members detect: [:each | (each at: \'name\') = memberName] ifNone: [nil].\r        memberToUpdate \r            ifNil: [TeaResponse notFound body: \'Resource not found\']\r            ifNotNil: [\r                members remove: memberToUpdate.\r                members add: updatedData.\r                TeaResponse ok body: \'Member updated successfully\'].\r        ];\r    \r    start.'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-02T02:02:07.972101-05:00' ],
+		#self : OmReference [ '66' ]
+	},
+	#content : '"Create collections to store data"\rresources := OrderedCollection new.\rresources add: (Dictionary newFrom: {\'name\' -> \'Gold\'. \'amount\' -> 100}).\rresources add: (Dictionary newFrom: {\'name\' -> \'Wood\'. \'amount\' -> 200}).\r\rmembers := OrderedCollection new.\rmembers add: (Dictionary newFrom: {\'name\' -> \'John\'. \'role\' -> \'Leader\'}).\rmembers add: (Dictionary newFrom: {\'name\' -> \'Lisa\'. \'role\' -> \'Member\'}).\r\r"Create server with routes including GET, POST and PUT"\rserver := Teapot configure: { #port -> 8080. #debugMode -> true }.\r\rserver\r    "GET endpoints"\r    GET: \'/api/resources\' -> (String streamContents: [:s |  \r        STON writer  \r            on: s;  \r            nextPut: resources]).\r    GET: \'/api/members\' -> (String streamContents: [:s |  \r        STON writer  \r            on: s;  \r            nextPut: members]).\r            \r    "POST endpoints to add new items"\r    POST: \'/api/resources\' -> [:request |  \r        | newResource |\r        newResource := STON fromString: request entity string.\r        resources add: newResource.\r        TeaResponse ok body: \'Resource added successfully\' ].\r            \r    POST: \'/api/members\' -> [:request |  \r        | newMember |\r        newMember := STON fromString: request entity string.\r        members add: newMember.\r        TeaResponse ok body: \'Member added successfully\' ].\r            \r    "PUT endpoints to update existing items"\r    PUT: \'/api/resources/:name\' -> [:request |  \r        | resourceName updatedData resourceToUpdate |\r        resourceName := (request at: #name) asString.  "Convert route parameter to a string"\r        updatedData := STON fromString: request entity string.\r        \r        resourceToUpdate := resources detect: [:each | (each at: \'name\') = resourceName] ifNone: [nil].\r        resourceToUpdate \r            ifNil: [TeaResponse notFound body: \'Resource not found\']\r            ifNotNil: [\r                resources remove: resourceToUpdate.\r                resources add: updatedData.\r                TeaResponse ok body: \'Resource updated successfully\'].\r        ].\r            \r    PUT: \'/api/members/:name\' -> [:request |  \r        | memberName updatedData memberToUpdate |\r        memberName := (request at: #name) asString.\r        updatedData := STON fromString: request entity string.\r        \r        memberToUpdate := members detect: [:each | (each at: \'name\') = memberName] ifNone: [nil].\r        memberToUpdate \r            ifNil: [TeaResponse notFound body: \'Member not found\']\r            ifNotNil: [\r                members remove: memberToUpdate.\r                members add: updatedData.\r                TeaResponse ok body: \'Member updated successfully\'].\r        ].\r        \r    start.\r'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-02T02:02:16.500306-05:00' ],
+		#self : OmReference [ '67' ]
+	},
+	#content : '"Create collections to store data"\rresources := OrderedCollection new.\rresources add: (Dictionary newFrom: {\'name\' -> \'Gold\'. \'amount\' -> 100}).\rresources add: (Dictionary newFrom: {\'name\' -> \'Wood\'. \'amount\' -> 200}).\r\rmembers := OrderedCollection new.\rmembers add: (Dictionary newFrom: {\'name\' -> \'John\'. \'role\' -> \'Leader\'}).\rmembers add: (Dictionary newFrom: {\'name\' -> \'Lisa\'. \'role\' -> \'Member\'}).\r\r"Create server with routes including GET, POST and PUT"\rserver := Teapot configure: { #port -> 8080. #debugMode -> true }.\r\rserver\r    "GET endpoints"\r    GET: \'/api/resources\' -> (String streamContents: [:s |  \r        STON writer  \r            on: s;  \r            nextPut: resources]).\r    GET: \'/api/members\' -> (String streamContents: [:s |  \r        STON writer  \r            on: s;  \r            nextPut: members]).\r            \r    "POST endpoints to add new items"\r    POST: \'/api/resources\' -> [:request |  \r        | newResource |\r        newResource := STON fromString: request entity string.\r        resources add: newResource.\r        TeaResponse ok body: \'Resource added successfully\' ].\r            \r    POST: \'/api/members\' -> [:request |  \r        | newMember |\r        newMember := STON fromString: request entity string.\r        members add: newMember.\r        TeaResponse ok body: \'Member added successfully\' ].\r            \r    "PUT endpoints to update existing items"\r    PUT: \'/api/resources/:name\' -> [:request |  \r        | resourceName updatedData resourceToUpdate |\r        resourceName := (request at: #name) asString.  "Convert route parameter to a string"\r        updatedData := STON fromString: request entity string.\r        \r        resourceToUpdate := resources detect: [:each | (each at: \'name\') = resourceName] ifNone: [nil].\r        resourceToUpdate \r            ifNil: [TeaResponse notFound body: \'Resource not found\']\r            ifNotNil: [\r                resources remove: resourceToUpdate.\r                resources add: updatedData.\r                TeaResponse ok body: \'Resource updated successfully\'].\r        ].\r            \r    PUT: \'/api/members/:name\' -> [:request |  \r        | memberName updatedData memberToUpdate |\r        memberName := (request at: #name) asString.\r        updatedData := STON fromString: request entity string.\r        \r        memberToUpdate := members detect: [:each | (each at: \'name\') = memberName] ifNone: [nil].\r        memberToUpdate \r            ifNil: [TeaResponse notFound body: \'Member not found\']\r            ifNotNil: [\r                members remove: memberToUpdate.\r                members add: updatedData.\r                TeaResponse ok body: \'Member updated successfully\'].\r        ]\r        \r    start.\r'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-02T02:02:24.809273-05:00' ],
+		#self : OmReference [ '68' ]
+	},
+	#content : '"Create collections to store data"\rresources := OrderedCollection new.\rresources add: (Dictionary newFrom: {\'name\' -> \'Gold\'. \'amount\' -> 100}).\rresources add: (Dictionary newFrom: {\'name\' -> \'Wood\'. \'amount\' -> 200}).\r\rmembers := OrderedCollection new.\rmembers add: (Dictionary newFrom: {\'name\' -> \'John\'. \'role\' -> \'Leader\'}).\rmembers add: (Dictionary newFrom: {\'name\' -> \'Lisa\'. \'role\' -> \'Member\'}).\r\r"Create server with routes including GET, POST and PUT"\rserver := Teapot configure: { #port -> 8080. #debugMode -> true }.\r\rserver\r    "GET endpoints"\r    GET: \'/api/resources\' -> (String streamContents: [:s |  \r        STON writer  \r            on: s;  \r            nextPut: resources]).\r    GET: \'/api/members\' -> (String streamContents: [:s |  \r        STON writer  \r            on: s;  \r            nextPut: members]).\r            \r    "POST endpoints to add new items"\r    POST: \'/api/resources\' -> [:request |  \r        | newResource |\r        newResource := STON fromString: request entity string.\r        resources add: newResource.\r        TeaResponse ok body: \'Resource added successfully\' ].\r            \r    POST: \'/api/members\' -> [:request |  \r        | newMember |\r        newMember := STON fromString: request entity string.\r        members add: newMember.\r        TeaResponse ok body: \'Member added successfully\' ].\r            \r    "PUT endpoints to update existing items"\r    PUT: \'/api/resources/:name\' -> [:request |  \r        | resourceName updatedData resourceToUpdate |\r        resourceName := (request at: #name) asString.  "Convert route parameter to a string"\r        updatedData := STON fromString: request entity string.\r        \r        resourceToUpdate := resources detect: [:each | (each at: \'name\') = resourceName] ifNone: [nil].\r        resourceToUpdate \r            ifNil: [TeaResponse notFound body: \'Resource not found\']\r            ifNotNil: [\r                resources remove: resourceToUpdate.\r                resources add: updatedData.\r                TeaResponse ok body: \'Resource updated successfully\'].\r        ].\r            \r    PUT: \'/api/members/:name\' -> [:request |  \r        | memberName updatedData memberToUpdate |\r        memberName := (request at: #name) asString.\r        updatedData := STON fromString: request entity string.\r        \r        memberToUpdate := members detect: [:each | (each at: \'name\') = memberName] ifNone: [nil].\r        memberToUpdate \r            ifNil: [TeaResponse notFound body: \'Member not found\']\r            ifNotNil: [\r                members remove: memberToUpdate.\r                members add: updatedData.\r                TeaResponse ok body: \'Member updated successfully\'].\r        ].\r        \r    start.\r'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-02T02:02:41.322244-05:00' ],
+		#self : OmReference [ '69' ]
+	},
+	#content : '"Create collections to store data"\rresources := OrderedCollection new.\rresources add: (Dictionary newFrom: {\'name\' -> \'Gold\'. \'amount\' -> 100}).\rresources add: (Dictionary newFrom: {\'name\' -> \'Wood\'. \'amount\' -> 200}).\r\rmembers := OrderedCollection new.\rmembers add: (Dictionary newFrom: {\'name\' -> \'John\'. \'role\' -> \'Leader\'}).\rmembers add: (Dictionary newFrom: {\'name\' -> \'Lisa\'. \'role\' -> \'Member\'}).\r\r"Create server with routes including GET, POST and PUT"\rserver := Teapot configure: { #port -> 8080. #debugMode -> true }.\r\rserver\r    "GET endpoints"\r    GET: \'/api/resources\' -> [String streamContents: [:s |  \r        STON writer  \r            on: s;  \r            nextPut: resources]].\r    GET: \'/api/members\' -> (String streamContents: [:s |  \r        STON writer  \r            on: s;  \r            nextPut: members]).\r            \r    "POST endpoints to add new items"\r    POST: \'/api/resources\' -> [:request |  \r        | newResource |\r        newResource := STON fromString: request entity string.\r        resources add: newResource.\r        TeaResponse ok body: \'Resource added successfully\' ].\r            \r    POST: \'/api/members\' -> [:request |  \r        | newMember |\r        newMember := STON fromString: request entity string.\r        members add: newMember.\r        TeaResponse ok body: \'Member added successfully\' ].\r            \r    "PUT endpoints to update existing items"\r    PUT: \'/api/resources/:name\' -> [:request |  \r        | resourceName updatedData resourceToUpdate |\r        resourceName := (request at: #name) asString.  "Convert route parameter to a string"\r        updatedData := STON fromString: request entity string.\r        \r        resourceToUpdate := resources detect: [:each | (each at: \'name\') = resourceName] ifNone: [nil].\r        resourceToUpdate \r            ifNil: [TeaResponse notFound body: \'Resource not found\']\r            ifNotNil: [\r                resources remove: resourceToUpdate.\r                resources add: updatedData.\r                TeaResponse ok body: \'Resource updated successfully\'].\r        ].\r            \r    PUT: \'/api/members/:name\' -> [:request |  \r        | memberName updatedData memberToUpdate |\r        memberName := (request at: #name) asString.\r        updatedData := STON fromString: request entity string.\r        \r        memberToUpdate := members detect: [:each | (each at: \'name\') = memberName] ifNone: [nil].\r        memberToUpdate \r            ifNil: [TeaResponse notFound body: \'Member not found\']\r            ifNotNil: [\r                members remove: memberToUpdate.\r                members add: updatedData.\r                TeaResponse ok body: \'Member updated successfully\'].\r        ].\r        \r    start.\r'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-02T02:02:53.551273-05:00' ],
+		#self : OmReference [ '70' ]
+	},
+	#content : '"Create collections to store data"\rresources := OrderedCollection new.\rresources add: (Dictionary newFrom: {\'name\' -> \'Gold\'. \'amount\' -> 100}).\rresources add: (Dictionary newFrom: {\'name\' -> \'Wood\'. \'amount\' -> 200}).\r\rmembers := OrderedCollection new.\rmembers add: (Dictionary newFrom: {\'name\' -> \'John\'. \'role\' -> \'Leader\'}).\rmembers add: (Dictionary newFrom: {\'name\' -> \'Lisa\'. \'role\' -> \'Member\'}).\r\r"Create server with routes including GET, POST and PUT"\rserver := Teapot configure: { #port -> 8080. #debugMode -> true }.\r\rserver.\r    "GET endpoints"\r    GET: \'/api/resources\' -> [String streamContents: [:s |  \r        STON writer  \r            on: s;  \r            nextPut: resources]].\r    GET: \'/api/members\' -> (String streamContents: [:s |  \r        STON writer  \r            on: s;  \r            nextPut: members]).\r            \r    "POST endpoints to add new items"\r    POST: \'/api/resources\' -> [:request |  \r        | newResource |\r        newResource := STON fromString: request entity string.\r        resources add: newResource.\r        TeaResponse ok body: \'Resource added successfully\' ].\r            \r    POST: \'/api/members\' -> [:request |  \r        | newMember |\r        newMember := STON fromString: request entity string.\r        members add: newMember.\r        TeaResponse ok body: \'Member added successfully\' ].\r            \r    "PUT endpoints to update existing items"\r    PUT: \'/api/resources/:name\' -> [:request |  \r        | resourceName updatedData resourceToUpdate |\r        resourceName := (request at: #name) asString.  "Convert route parameter to a string"\r        updatedData := STON fromString: request entity string.\r        \r        resourceToUpdate := resources detect: [:each | (each at: \'name\') = resourceName] ifNone: [nil].\r        resourceToUpdate \r            ifNil: [TeaResponse notFound body: \'Resource not found\']\r            ifNotNil: [\r                resources remove: resourceToUpdate.\r                resources add: updatedData.\r                TeaResponse ok body: \'Resource updated successfully\'].\r        ].\r            \r    PUT: \'/api/members/:name\' -> [:request |  \r        | memberName updatedData memberToUpdate |\r        memberName := (request at: #name) asString.\r        updatedData := STON fromString: request entity string.\r        \r        memberToUpdate := members detect: [:each | (each at: \'name\') = memberName] ifNone: [nil].\r        memberToUpdate \r            ifNil: [TeaResponse notFound body: \'Member not found\']\r            ifNotNil: [\r                members remove: memberToUpdate.\r                members add: updatedData.\r                TeaResponse ok body: \'Member updated successfully\'].\r        ].\r        \r    start.\r'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-02T02:04:12.277616-05:00' ],
+		#self : OmReference [ '71' ]
+	},
+	#content : '"Create collections to store data"\rresources := OrderedCollection new.\rresources add: (Dictionary newFrom: {\'name\' -> \'Gold\'. \'amount\' -> 100}).\rresources add: (Dictionary newFrom: {\'name\' -> \'Wood\'. \'amount\' -> 200}).\r\rmembers := OrderedCollection new.\rmembers add: (Dictionary newFrom: {\'name\' -> \'John\'. \'role\' -> \'Leader\'}).\rmembers add: (Dictionary newFrom: {\'name\' -> \'Lisa\'. \'role\' -> \'Member\'}).\r\r"Create server with routes using the collections"\rserver := Teapot configure: { #port -> 8080. #debugMode -> true }.\r\rserver\r    GET: \'/api/resources\' -> (String streamContents: [:s | \r        STON writer \r            on: s; \r            nextPut: resources]);\r    GET: \'/api/members\' -> (String streamContents: [:s | \r        STON writer \r            on: s; \r            nextPut: members]);\r    start.'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-02T02:08:49.110162-05:00' ],
+		#self : OmReference [ '72' ]
+	},
+	#content : '"Create collections to store data"\rresources := OrderedCollection new.\rresources add: (Dictionary newFrom: {\'name\' -> \'Gold\'. \'amount\' -> 100}).\rresources add: (Dictionary newFrom: {\'name\' -> \'Wood\'. \'amount\' -> 200}).\r\rmembers := OrderedCollection new.\rmembers add: (Dictionary newFrom: {\'name\' -> \'John\'. \'role\' -> \'Leader\'}).\rmembers add: (Dictionary newFrom: {\'name\' -> \'Lisa\'. \'role\' -> \'Member\'}).\r\r"Create server with routes using the collections"\rserver := Teapot configure: { #port -> 8080. #debugMode -> true }.\r\rserver\r    "GET endpoints to retrieve the collections"\r    GET: \'/api/resources\' -> (String streamContents: [:s |  \r        STON writer  \r            on: s;  \r            nextPut: resources]).\r    GET: \'/api/members\' -> (String streamContents: [:s |  \r        STON writer  \r            on: s;  \r            nextPut: members]).\r    \r    "PUT endpoint for updating a resource by its name"\r    PUT: \'/api/resources/:name\' -> [:request |  \r        | resourceName updatedData resourceToUpdate |\r        resourceName := (request at: #name) asString.  "Ensure parameter is a string"\r        updatedData := STON fromString: request entity string.\r        \r        resourceToUpdate := resources detect: [:each | (each at: \'name\') = resourceName] ifNone: [nil].\r        resourceToUpdate\r            ifNil: [TeaResponse notFound body: \'Resource not found\']\r            ifNotNil: [\r                resources remove: resourceToUpdate.\r                resources add: updatedData.\r                TeaResponse ok body: \'Resource updated successfully\'].\r    ].\r    \r    "PUT endpoint for updating a member by its name"\r    PUT: \'/api/members/:name\' -> [:request |  \r        | memberName updatedData memberToUpdate |\r        memberName := (request at: #name) asString.\r        updatedData := STON fromString: request entity string.\r        \r        memberToUpdate := members detect: [:each | (each at: \'name\') = memberName] ifNone: [nil].\r        memberToUpdate\r            ifNil: [TeaResponse notFound body: \'Member not found\']\r            ifNotNil: [\r                members remove: memberToUpdate.\r                members add: updatedData.\r                TeaResponse ok body: \'Member updated successfully\'].\r    ].\r    \r    start.\r'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-02T02:08:53.024908-05:00' ],
+		#self : OmReference [ '73' ]
+	},
+	#content : '"Create collections to store data"\rresources := OrderedCollection new.\rresources add: (Dictionary newFrom: {\'name\' -> \'Gold\'. \'amount\' -> 100}).\rresources add: (Dictionary newFrom: {\'name\' -> \'Wood\'. \'amount\' -> 200}).\r\rmembers := OrderedCollection new.\rmembers add: (Dictionary newFrom: {\'name\' -> \'John\'. \'role\' -> \'Leader\'}).\rmembers add: (Dictionary newFrom: {\'name\' -> \'Lisa\'. \'role\' -> \'Member\'}).\r\r"Create server with routes using the collections"\rserver := Teapot configure: { #port -> 8080. #debugMode -> true }.\r\rserver\r    GET: \'/api/resources\' -> (String streamContents: [:s | \r        STON writer \r            on: s; \r            nextPut: resources]);\r    GET: \'/api/members\' -> (String streamContents: [:s | \r        STON writer \r            on: s; \r            nextPut: members]);\r    start.'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-02T02:10:39.469866-05:00' ],
+		#self : OmReference [ '74' ]
+	},
+	#content : '"Create collections to store data"\rresources := OrderedCollection new.\rresources add: (Dictionary newFrom: {\'name\' -> \'Gold\'. \'amount\' -> 100}).\rresources add: (Dictionary newFrom: {\'name\' -> \'Wood\'. \'amount\' -> 200}).\r\rmembers := OrderedCollection new.\rmembers add: (Dictionary newFrom: {\'name\' -> \'John\'. \'role\' -> \'Leader\'}).\rmembers add: (Dictionary newFrom: {\'name\' -> \'Lisa\'. \'role\' -> \'Member\'}).\r\r"Create server with routes using the collections"\rserver := Teapot configure: { #port -> 8080. #debugMode -> true }.\r\rserver\r    "GET endpoints to retrieve the collections"\r    GET: \'/api/resources\' -> (String streamContents: [:s |  \r        STON writer  \r            on: s;  \r            nextPut: resources]).\r    GET: \'/api/members\' -> (String streamContents: [:s |  \r        STON writer  \r            on: s;  \r            nextPut: members]).\r    \r    "PUT endpoint for updating a resource by its name"\r    PUT: \'/api/resources/:name\' -> [:request |  \r        | resourceName updatedData resourceToUpdate |\r        resourceName := (request at: #name) asString.  "Ensure the parameter is a string"\r        updatedData := STON fromString: request entity string.\r        \r        resourceToUpdate := resources detect: [:each | (each at: \'name\') = resourceName] ifNone: [nil].\r        resourceToUpdate\r            ifNil: [TeaResponse notFound body: \'Resource not found\']\r            ifNotNil: [\r                resources remove: resourceToUpdate.\r                resources add: updatedData.\r                TeaResponse ok body: \'Resource updated successfully\'].\r    ].\r    \r    "PUT endpoint for updating a member by its name"\r    PUT: \'/api/members/:name\' -> [:request |  \r        | memberName updatedData memberToUpdate |\r        memberName := (request at: #name) asString.\r        updatedData := STON fromString: request entity string.\r        \r        memberToUpdate := members detect: [:each | (each at: \'name\') = memberName] ifNone: [nil].\r        memberToUpdate\r            ifNil: [TeaResponse notFound body: \'Member not found\']\r            ifNotNil: [\r                members remove: memberToUpdate.\r                members add: updatedData.\r                TeaResponse ok body: \'Member updated successfully\'].\r    ].\r    \r    start.\r'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-02T02:11:27.62191-05:00' ],
+		#self : OmReference [ '75' ]
+	},
+	#content : '"Create collections to store data"\rresources := OrderedCollection new.\rresources add: (Dictionary newFrom: {\'name\' -> \'Gold\'. \'amount\' -> 100}).\rresources add: (Dictionary newFrom: {\'name\' -> \'Wood\'. \'amount\' -> 200}).\r\rmembers := OrderedCollection new.\rmembers add: (Dictionary newFrom: {\'name\' -> \'John\'. \'role\' -> \'Leader\'}).\rmembers add: (Dictionary newFrom: {\'name\' -> \'Lisa\'. \'role\' -> \'Member\'}).\r\r"Create server with routes using the collections"\rserver := Teapot configure: { #port -> 8080. #debugMode -> true }.\r\rserver\r    GET: \'/api/resources\' -> [:request |\r        String streamContents: [:s |  \r            STON writer on: s; nextPut: resources]].\r    GET: \'/api/members\' -> [:request |\r        String streamContents: [:s |  \r            STON writer on: s; nextPut: members]].\r    start.\r'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-02T02:17:33.66395-05:00' ],
+		#self : OmReference [ '76' ]
+	},
+	#content : '| jsonStore jsonTemp server |\r\r"Create our janky in-memory JSON stores"\rjsonStore := OrderedCollection new.\rjsonStore add: (Dictionary newFrom: { \'id\' -> 1. \'name\' -> \'JankyData1\' }).\rjsonStore add: (Dictionary newFrom: { \'id\' -> 2. \'name\' -> \'JankyData2\' }).\r\r"Temporary store for moved JSONs"\rjsonTemp := OrderedCollection new.\r\r"Configure our Teapot server on port 8080 in debug mode"\rserver := Teapot configure: { #port -> 8080. #debugMode -> true }.\r\rserver\r    "GET /api/json returns our janky JSON store"\r    GET: \'/api/json\' -> [:request |\r        String streamContents: [:s | \r            STON writer on: s; nextPut: jsonStore]].\r\r    "POST /api/json accepts a JSON and adds it to jsonStore"\r    POST: \'/api/json\' -> [:request |\r        | newJson |\r        newJson := STON fromString: request entity string.\r        jsonStore add: newJson.\r        TeaResponse ok body: \'JSON added (jank style)!\'].\r\r    "PUT /api/json/:id/move finds a JSON by its id, removes it from jsonStore, and adds it to jsonTemp"\r    PUT: \'/api/json/:id/move\' -> [:request |\r        | jsonId found |\r        jsonId := (request at: #id) asNumber.  "Convert the route param to a number"\r        found := jsonStore detect: [:each | (each at: \'id\') = jsonId] ifNone: [nil].\r        found\r            ifNotNil: [\r                jsonStore remove: found.\r                jsonTemp add: found.\r                TeaResponse ok body: \'JSON moved (ultra jank)!\']\r            ifNil: [\r                TeaResponse notFound body: \'JSON not found (janky fail)!\']].\r\r    start.\r'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-02T02:18:50.581082-05:00' ],
+		#self : OmReference [ '77' ]
+	},
+	#content : '| teapot jsonResponse |\r\r"Define a dummy connection class that simulates executing a SQL query"\rObject subclass: #DummyConnection\r    instanceVariableNames: \'\'\r    classVariableNames: \'\'\r    package: \'JankAPI\'.\r\rDummyConnection class>>execute: aSQLString\r    "Simulate executing a SQL query and return dummy rows"\r    ^ OrderedCollection with: (Dictionary newFrom: {\'id\' -> 1. \'name\' -> \'Gold\'})\r                           with: (Dictionary newFrom: {\'id\' -> 2. \'name\' -> \'Wood\'}).\r\r"Create our TLWebServer-style teapot"\rteapot := TLWebServerTeapot new.\r\rteapot\r    GET: \'/api/resources\' -> [:request |\r        | cursor rows |\r        "Execute dummy query"\r        cursor := DummyConnection execute: \'SELECT * FROM resources;\'.\r        rows := cursor.  "Here, cursor is our result set"\r        \r        "Convert the rows to a JSON string using STON"\r        jsonResponse := String streamContents: [:s |\r            STON writer on: s; nextPut: rows].\r        ^ TeaResponse ok body: jsonResponse].\r        \rteapot start.'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-02T02:19:25.902649-05:00' ],
+		#self : OmReference [ '78' ]
+	},
+	#content : '| teapot jsonResponse connection |\r\r"Define a dummy connection as a block that simulates executing a SQL query"\rconnection := [:sql | \r    "Ignore the SQL for now and just return some dummy rows"\r    OrderedCollection with: (Dictionary newFrom: {\'id\' -> 1. \'name\' -> \'Gold\'})\r                       with: (Dictionary newFrom: {\'id\' -> 2. \'name\' -> \'Wood\'})\r].\r\r"Instantiate a TLWebServerTeapot"\rteapot := TLWebServerTeapot new.\r\rteapot\r    GET: \'/api/resources\' -> [:request |\r        | cursor rows |\r        "Execute dummy query using our connection block"\r        cursor := connection value: \'SELECT * FROM resources;\'.\r        rows := cursor.\r        "Convert the rows to a JSON string using STON"\r        jsonResponse := String streamContents: [:s |\r            STON writer on: s; nextPut: rows].\r        TeaResponse ok body: jsonResponse].\r\rteapot start.\r'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-02T02:19:31.209471-05:00' ],
+		#self : OmReference [ '79' ]
+	},
+	#content : '| teapot jsonResponse connection |\r\r"Define a dummy connection as a block that simulates executing a SQL query"\rconnection := [:sql | \r    "Ignore the SQL for now and just return some dummy rows"\r    OrderedCollection with: (Dictionary newFrom: {\'id\' -> 1. \'name\' -> \'Gold\'})\r                       with: (Dictionary newFrom: {\'id\' -> 2. \'name\' -> \'Wood\'})\r].\r\r"Instantiate a TLWebServerTeapot"\rteapot := TLWebserver new.\r\rteapot\r    GET: \'/api/resources\' -> [:request |\r        | cursor rows |\r        "Execute dummy query using our connection block"\r        cursor := connection value: \'SELECT * FROM resources;\'.\r        rows := cursor.\r        "Convert the rows to a JSON string using STON"\r        jsonResponse := String streamContents: [:s |\r            STON writer on: s; nextPut: rows].\r        TeaResponse ok body: jsonResponse].\r\rteapot start.\r'
+}OmEntry {
+	#tags : {
+		#timestamp : DateAndTime [ '2025-03-02T02:29:36.171903-05:00' ],
+		#self : OmReference [ '80' ]
+	},
+	#content : 'dbFile := (Smalltalk imageDirectory / \'guilds.db\') fullName.\rconnection := SQLite3Connection on: dbFile.\rconnection open.\r\r"Table for guild resources"\rconnection execute: \'CREATE TABLE IF NOT EXISTS resources (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    amount INTEGER,\r    changePerDay INTEGER\r  );\'.\r"Table for guild members"\rconnection execute: \'CREATE TABLE IF NOT EXISTS members (\r    id INTEGER PRIMARY KEY,\r    name TEXT,\r    role TEXT,\r    tasks TEXT\r  );\'.\r\r"Get all data as a simple string"\rresult := String new writeStream.\rcursor := connection execute: \'SELECT * FROM resources;\'.\rrow := cursor next.\r[row notNil] whileTrue: [\r    result nextPutAll: row asString.\r    result cr.\r    row := cursor next.\r].\rstringResult := result contents.\r\rTLWebserver teapot\r    GET: \'/api/resources\' -> stringResult'
+}
